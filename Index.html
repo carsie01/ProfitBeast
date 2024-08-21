@@ -3,53 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Turn-Based Game</title>
+    <title>Scenario-Based Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Start Screen -->
-    <div class="start-screen" id="start-screen">
-        <h1>Profit Beast</h1>
-        <p>Welcome to Profit Beast! Can you build the next big startup?</p>
-        <button id="start-button">Start Game</button>
+    <div id="start-screen" class="screen">
+        <h1>Welcome to GreenTech Solutions</h1>
+        <p>Spilleren navigerer gennem disse 20 scenarier, træffer valg, og samler point baseret på deres beslutninger. Målet er at opnå mindst 100 point for at sikre, at GreenTech Solutions bliver en succesfuld virksomhed.</p>
+        <button id="start-button">Start the Game</button>
     </div>
 
-    <!-- Main Game Container (Initially Hidden) -->
-    <div class="game-container" id="game-container" style="display: none;">
-        <!-- Player Info -->
-        <div class="player-info" id="player-info">
-            <h3>Player 1</h3>
-            <p>Funding: $<span id="player-funds">1000000</span></p>
-            <p>Market Share: <span id="player-points">0</span>p</p>
+    <div id="game-screen" class="screen" style="display:none;">
+        <!-- Computer Player Info -->
+        <div class="player-info" id="computer-info">
+            <div class="player-avatar">
+                <img src="computer-avatar.png" alt="Computer Avatar">
+            </div>
+            <div class="player-stats">
+                <h3>Computer</h3>
+                <p>$<span id="computer-funds">1000000</span> | M<span id="computer-points">0</span>p</p>
+            </div>
         </div>
 
-        <!-- Character and Startup Cards -->
-        <div class="card-display">
-            <div class="character-card" id="player-character">Visionary</div>
-            <div class="startup-card" id="player-startup">EcoGenix</div>
+        <!-- Character and Startup Info -->
+        <div class="character-startup">
+            <div id="character-card" class="card">Character Card</div>
+            <div id="startup-card" class="card">Startup Card</div>
         </div>
 
-        <!-- Action Choices (Player's Hand) -->
-        <div class="actions-container" id="player-hand">
-            <!-- Player's cards will be rendered here by JavaScript -->
+        <!-- Scenario and Choices -->
+        <div id="scenario-container">
+            <h2 id="scenario-title">Scenario</h2>
+            <p id="scenario-description">Scenario Description</p>
+            <div id="choices-container" class="card-row">
+                <!-- Choices will be displayed here as cards -->
+            </div>
         </div>
 
-        <!-- Deck Area -->
-        <div class="deck-area">
-            <div class="profit-beast card-back" id="deck">DRAW A CARD</div>
+        <!-- Points Display -->
+        <div id="points-container">
+            <h3>Your Points: <span id="points">0</span></h3>
         </div>
 
-        <!-- Game Messages -->
-        <div id="game-messages"></div>
+        <button id="next-button" style="display:none;">Next Scenario</button>
     </div>
+
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close-button" id="close-modal">&times;</span>
-            <div id="modal-body">
-                <!-- Content for challenges and special offers will be dynamically inserted here -->
-            </div>
+            <img id="modal-image" src="" alt="Card Image">
         </div>
     </div>
+
     <script src="spil.js"></script>
 </body>
 </html>
