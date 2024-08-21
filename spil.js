@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let points = 0;
     let currentScenario = 0;
 
-    const characterCard = "Visionary";  // Placeholder: Assign based on user selection or random draw
-    const startupCard = "GreenTech Solutions";  // Placeholder: Assign based on user selection or random draw
+    const characterCard = "Karakter kort";  // Placeholder: Assign based on user selection or random draw
+    const startupCard = "Virksomhed";  // Placeholder: Assign based on user selection or random draw
 
     const scenarios = [
         {
