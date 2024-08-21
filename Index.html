@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scenario-Based Game</title>
+    <title>ProfitBeast</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="start-screen" class="screen">
-        <h1>Welcome to GreenTech Solutions</h1>
-        <p>Spilleren navigerer gennem disse 20 scenarier, træffer valg, og samler point baseret på deres beslutninger. Målet er at opnå mindst 100 point for at sikre, at GreenTech Solutions bliver en succesfuld virksomhed.</p>
+        <h1>Velkommen til ProfitBeast</h1>
+        <p>Kig godt på dit karaterkort og virksomedskort, og brug de redskaber du har til rådighed til, at navigerer gennem disse 10 scenarier. <br><br> Træf valg, og samel point baseret på dine beslutninger. Målet er at opnå mindst 100 point for at sikre, at din start up virksomhed bliver succesfuld.</p>
         <button id="start-button">Start the Game</button>
     </div>
 
     <div id="game-screen" class="screen" style="display:none;">
-        <!-- Computer Player Info -->
-        <div class="player-info" id="computer-info">
-            <div class="player-avatar">
-                <img src="computer-avatar.png" alt="Computer Avatar">
-            </div>
-            <div class="player-stats">
-                <h3>Computer</h3>
-                <p>$<span id="computer-funds">1000000</span> | M<span id="computer-points">0</span>p</p>
-            </div>
+        
+        <!-- Points Display -->
+        <div id="points-container">
+            <h3>Dine Point: <span id="points">0</span></h3>
         </div>
+
 
         <!-- Character and Startup Info -->
         <div class="character-startup">
@@ -40,11 +36,7 @@
             </div>
         </div>
 
-        <!-- Points Display -->
-        <div id="points-container">
-            <h3>Dine Point: <span id="points">0</span></h3>
-        </div>
-
+        
         <button id="next-button" style="display:none;">Next Scenario</button>
     </div>
 

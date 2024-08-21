@@ -17,312 +17,312 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const scenarios = [
         {
-            title: "Scenarie 1",
-            description: "Du overvejer, hvordan du bedst kan validere din prototype på markedet.",
+            title: "Produktudvikling",
+            description: "Din prototype har brug for yderligere udvikling for at kunne skalere.",
             choices: [
                 { 
                     image: "choice1a.jpg", 
                     points: 15, 
-                    feedback: "Samarbejd med en eksisterende virksomhed for at teste produktet i deres miljø. En fremragende beslutning, der udnytter din nuværende netværk effektivt." 
+                    feedback: "Brug de tekniske eksperter i teamet til at forbedre prototypen." 
                 },
                 { 
                     image: "choice1b.jpg", 
-                    points: 10, 
-                    feedback: "Udfør en lille lokal test med et begrænset antal brugere. En sikker og ressourceeffektiv metode." 
+                    points: -5, 
+                    feedback: "Outsource udviklingen til en ekstern udvikler." 
                 },
                 { 
                     image: "choice1c.jpg", 
-                    points: 7, 
-                    feedback: "Start en online crowdfunding-kampagne. En god måde at samle midler på, men kræver mere end hvad du allerede har." 
+                    points: 12, 
+                    feedback: "Test prototypen med tidlige kunder og tilpas efter deres feedback." 
                 },
                 { 
                     image: "choice1d.jpg", 
-                    points: 5, 
-                    feedback: "Gå direkte til en stor messe og præsenter produktet. Ambitiøst, men kræver betydelige ressourcer." 
+                    points: 10, 
+                    feedback: "Brug mentorens erfaring til at identificere de vigtigste udviklingsområder." 
                 },
                 { 
                     image: "choice1e.jpg", 
                     points: 8, 
-                    feedback: "Send prototypen til en ekspert for at få feedback. Nyttigt, men du afhænger af eksterne ressourcer." 
+                    feedback: "Invester en del af din kapital i nye værktøjer til udvikling." 
                 }
             ]
         },
         {
-            title: "Scenarie 2",
-            description: "Du har mulighed for at deltage i en startup accelerator.",
+            title: "Marketingstrategi",
+            description: "Du skal beslutte, hvordan du bedst markedsfører din prototype.",
             choices: [
                 { 
                     image: "choice2a.jpg", 
-                    points: 20, 
-                    feedback: "Deltag og få adgang til deres ressourcer og netværk. Dette giver dig adgang til nye muligheder uden at miste kontrollen over din virksomhed." 
+                    points: 15, 
+                    feedback: "Udnyt marketing specialisten i dit team til at skabe en målrettet kampagne." 
                 },
                 { 
                     image: "choice2b.jpg", 
-                    points: 10, 
-                    feedback: "Deltag, men fokuser mest på din egen udvikling. Et fornuftigt valg, der udnytter din eksisterende viden." 
+                    points: -10, 
+                    feedback: "Hyr et eksternt marketingbureau til at hjælpe med strategien." 
                 },
                 { 
                     image: "choice2c.jpg", 
-                    points: 5, 
-                    feedback: "Undgå acceleratoren og fokusér på at få flere kunder. Dette valg kan begrænse din adgang til ressourcer." 
+                    points: 12, 
+                    feedback: "Brug dit netværk til at skabe partnerskaber, der kan fremme din markedsføring. " 
                 },
                 { 
                     image: "choice2d.jpg", 
-                    points: 15, 
-                    feedback: "Find en anden accelerator, der er mere fokuseret på din branche. Dette kan give mere relevante ressourcer." 
+                    points: 10, 
+                    feedback: "Lav en budgetvenlig online kampagne ved hjælp af sociale medier." 
                 },
                 { 
                     image: "choice2e.jpg", 
-                    points: 8, 
-                    feedback: "Forbedre produktet før deltagelse i en accelerator. Gode forberedelser, men kræver tid." 
+                    points: 5, 
+                    feedback: "v" 
                 }
             ]
         },
         {
-            title: "Scenarie 3",
-            description: "En stor investor viser interesse, men vil have 40% af virksomheden.",
+            title: "Forretningsudvikling",
+            description: "Du overvejer, hvordan du bedst kan udvide din forretning.",
             choices: [
                 { 
                     image: "choice3a.jpg", 
-                    points: 5, 
-                    feedback: "Accepter tilbuddet for at få kapital hurtigt. Du mister dog en stor del af din kontrol over virksomheden." 
+                    points: 15, 
+                    feedback: "Brug dit netværk til at finde potentielle samarbejdspartnere." 
                 },
                 { 
                     image: "choice3b.jpg", 
                     points: 10, 
-                    feedback: "Forhandl om en lavere ejerandel. En klog strategi for at bevare mere kontrol." 
+                    feedback: "Fokusér på at skalere organisk gennem nuværende kunder." 
                 },
                 { 
                     image: "choice3c.jpg", 
-                    points: 15, 
-                    feedback: "Afvis tilbuddet og søg andre investorer. Dette valg holder dig fleksibel, men det kræver tid og energi." 
+                    points: 8, 
+                    feedback: "Invester i at rekruttere flere medlemmer til teamet." 
                 },
                 { 
                     image: "choice3d.jpg", 
-                    points: 8, 
-                    feedback: "Indgå et samarbejde uden at give ejerandele. En smart måde at beholde kontrollen, men samarbejdet kan have udfordringer." 
+                    points: 5, 
+                    feedback: "Brug kapitalen til at købe mindre konkurrenter." 
                 },
                 { 
                     image: "choice3e.jpg", 
                     points: 12, 
-                    feedback: "Find en alternativ finansieringskilde, som crowdfunding. Dette valg kan tage længere tid, men det holder dig uafhængig." 
+                    feedback: "Konsulter med din mentor for at udvikle en ekspansionsstrategi." 
                 }
             ]
         },
         {
-            title: "Scenarie 4",
-            description: "Din prototype har brug for forbedringer efter en første test.",
+            title: "Kundefeedback",
+            description: "Du har modtaget blandet feedback fra dine tidlige brugere.",
             choices: [
                 { 
                     image: "choice4a.jpg", 
-                    points: 15, 
-                    feedback: "Udvikl en opdateret version med brugernes feedback. Dette valg bygger på dine eksisterende ressourcer og erfaringer." 
+                    points: 12, 
+                    feedback: "Indsaml mere feedback gennem dit netværk for at få flere data. " 
                 },
                 { 
                     image: "choice4b.jpg", 
-                    points: 10, 
-                    feedback: "Sæt udviklingen på pause for at rette fejlene. Et fornuftigt valg for at sikre kvalitet, men det kræver tid." 
+                    points: 12, 
+                    feedback: "Brug feedbacken til at foretage hurtige justeringer på prototypen." 
                 },
                 { 
                     image: "choice4c.jpg", 
-                    points: 5, 
-                    feedback: "Lancér med kendte fejl og forbedr senere. Dette kan være risikabelt og skade din virksomheds omdømme." 
+                    points: -10, 
+                    feedback: "Ignorér de mindre negative kommentarer og fortsæt med din plan." 
                 },
                 { 
                     image: "choice4d.jpg", 
-                    points: 12, 
-                    feedback: "Hyr eksterne eksperter til at hjælpe med forbedringer. Dette kan være effektivt, men det er dyrt og kræver eksterne ressourcer." 
+                    points: 10, 
+                    feedback: "Brug din marketing specialist til at forbedre kundekommunikationen. " 
                 },
                 { 
                     image: "choice4e.jpg", 
                     points: 8, 
-                    feedback: "Udsæt lanceringen for at perfektionere produktet. En sikker strategi, men du risikerer at miste momentum." 
+                    feedback: "Konsulter med din mentor for at prioritere ændringer. " 
                 }
             ]
         },
         {
-            title: "Scenarie 5",
-            description: "Et nyt konkurrenceprodukt kommer på markedet.",
+            title: "Partnerskaber",
+            description: "Du overvejer at indgå et partnerskab med en større virksomhed.",
             choices: [
                 { 
                     image: "choice5a.jpg", 
                     points: 5, 
-                    feedback: "Sænk prisen for at konkurrere. Dette kan hurtigt udtømme dine ressourcer." 
+                    feedback: "Udvikl prototypen yderligere før du indgår i et partnerskab." 
                 },
                 { 
                     image: "choice5b.jpg", 
-                    points: 15, 
-                    feedback: "Differentier dit produkt med unikke funktioner. En god strategi, der bygger på dine styrker." 
+                    points: 12, 
+                    feedback: "Brug din mentor til at etablere kontakt og forhandle en aftale." 
                 },
                 { 
                     image: "choice5c.jpg", 
                     points: 10, 
-                    feedback: "Ignorér konkurrenten og fokusér på din niche. En sikker tilgang, men det begrænser vækstmulighederne." 
+                    feedback: "Tag kontakt til virksomheden direkte og fremlæg din vision." 
                 },
                 { 
                     image: "choice5d.jpg", 
-                    points: 12, 
-                    feedback: "Lav en markedsføringskampagne, der fremhæver dine styrker. Et effektivt valg, der udnytter dine nuværende ressourcer." 
+                    points: 5, 
+                    feedback: "Brug kapitalen til at gøre din virksomhed mere attraktiv for partnere. " 
                 },
                 { 
                     image: "choice5e.jpg", 
-                    points: 8, 
-                    feedback: "Indgå et partnerskab med konkurrenten. En risikabel, men potentielt givende strategi." 
+                    points: 15, 
+                    feedback: "Brug dit netværk til at identificere de bedste potentielle partnere. " 
                 }
             ]
         },
         {
-            title: "Scenarie 6",
-            description: "Din marketingstrategi virker ikke som forventet.",
+            title: "Konkurrence",
+            description: "En ny konkurrent er dukket op på markedet.",
             choices: [
                 { 
                     image: "choice6a.jpg", 
-                    points: 15, 
-                    feedback: "Analyser data og tilpas strategien. Dette valg bygger på de ressourcer, du allerede har." 
+                    points: 9, 
+                    feedback: "Brug dit netværk til at få indsigt i konkurrentens strategi." 
                 },
                 { 
                     image: "choice6b.jpg", 
-                    points: 10, 
-                    feedback: "Fokuser på sociale medier og influencer marketing. En moderne tilgang, der kræver nye ressourcer." 
+                    points: 15, 
+                    feedback: "Differentier dit produkt ved at fokusere på unikke funktioner." 
                 },
                 { 
                     image: "choice6c.jpg", 
-                    points: 12, 
-                    feedback: "Skift fokus til B2B-markedet. En god idé, men det kræver en ændring i din eksisterende strategi." 
+                    points: 5, 
+                    feedback: "Sænk prisen for at konkurrere direkte." 
                 },
                 { 
                     image: "choice6d.jpg", 
-                    points: 8, 
-                    feedback: "Hyr et eksternt marketingbureau. Effektivt, men det kræver betydelige midler." 
+                    points: 10, 
+                    feedback: "Brug marketing specialisten til at skabe en kampagne, der fremhæver dine styrker." 
                 },
                 { 
                     image: "choice6e.jpg", 
-                    points: 5, 
-                    feedback: "Lav en rebranding for at tiltrække et nyt segment. Dette kan være kostbart og tidskrævende." 
+                    points: 8, 
+                    feedback: "Konsulter din mentor for at justere din strategi i forhold til konkurrencen" 
                 }
             ]
         },
         {
-            title: "Scenarie 7",
-            description: "Du skal beslutte, om du vil outsource produktionen.",
+            title: "Skalering",
+            description: "Din prototype er klar til at skalere op.",
             choices: [
                 { 
                     image: "choice7a.jpg", 
                     points: 10, 
-                    feedback: "Outsource til en billigere leverandør i udlandet. En omkostningseffektiv løsning, men det kræver tilsyn." 
+                    feedback: "Brug kapitalen til at opskalere produktionen." 
                 },
                 { 
                     image: "choice7b.jpg", 
-                    points: 12, 
-                    feedback: "Hold produktionen in-house for bedre kontrol. Dette valg giver dig fuld kontrol, men det er dyrere." 
+                    points: 15, 
+                    feedback: "Udnyt netværket til at finde distributører eller produktionspartnere." 
                 },
                 { 
                     image: "choice7c.jpg", 
-                    points: 15, 
-                    feedback: "Kombiner outsourcing med in-house produktion. En fleksibel løsning, der udnytter dine eksisterende ressourcer." 
+                    points: 12, 
+                    feedback: "Fokuser på at øge kundebasen før du skalerer." 
                 },
                 { 
                     image: "choice7d.jpg", 
                     points: 8, 
-                    feedback: "Find en lokal partner til produktionen. En sikker tilgang, men det kræver tid til at etablere partnerskabet." 
+                    feedback: "Konsulter din mentor for at sikre, at du er klar til skalering." 
                 },
                 { 
                     image: "choice7e.jpg", 
                     points: 5, 
-                    feedback: "Udskyd beslutningen og optimer eksisterende processer. Dette kan spare tid og penge på kort sigt, men forsinker fremgang." 
+                    feedback: "Ansæt mere personale for at understøtte skaleringen." 
                 }
             ]
         },
         {
-            title: "Scenarie 8",
-            description: "Et af dine teammedlemmer overvejer at forlade virksomheden.",
+            title: "Rebranding",
+            description: "Feedback tyder på, at din brandidentitet ikke er klar nok.",
             choices: [
                 { 
                     image: "choice8a.jpg", 
-                    points: 5, 
-                    feedback: "Tilbyd dem en bonus for at blive. Dette kan give en kortsigtet løsning, men det er ikke bæredygtigt." 
+                    points: 15, 
+                    feedback: "Brug marketing specialisten til at udvikle en ny brandstrategi." 
                 },
                 { 
                     image: "choice8b.jpg", 
-                    points: 10, 
-                    feedback: "Giv dem en større ejerandel. Dette er en stærk motivator, men det mindsker din kontrol." 
+                    points: -10, 
+                    feedback: "Hyr et eksternt branding bureau til at hjælpe med rebrandingen." 
                 },
                 { 
                     image: "choice8c.jpg", 
-                    points: 8, 
-                    feedback: "Find en erstatning hurtigt. Dette kan holde virksomheden i gang, men det er ikke altid let at finde den rette person." 
+                    points: 12, 
+                    feedback: "Brug dit netværk til at få feedback på den nye branding." 
                 },
                 { 
                     image: "choice8d.jpg", 
-                    points: 15, 
-                    feedback: "Hold en samtale for at forstå deres bekymringer og forsøge at løse dem. Dette er en langsigtet løsning, der udnytter din relation til teamet." 
+                    points: 8, 
+                    feedback: "Foretag mindre justeringer baseret på den oprindelige feedback." 
                 },
                 { 
                     image: "choice8e.jpg", 
-                    points: 12, 
-                    feedback: "Lad dem gå og reorganisér teamet. En svær beslutning, men det kan give en frisk start." 
+                    points: 10, 
+                    feedback: "Konsulter din mentor for at sikre, at rebrandingen stemmer overens med virksomhedens vision." 
                 }
             ]
         },
         {
-            title: "Scenarie 9",
-            description: "Du overvejer at udvide til en ny international markedsplads.",
+            title: "Teknologiudvikling",
+            description: "Ny teknologi kan forbedre dit produkt, men det kræver investering.",
             choices: [
                 { 
                     image: "choice9a.jpg", 
                     points: 15, 
-                    feedback: "Start en markedsundersøgelse først. Et klogt valg, der bygger på grundig planlægning." 
+                    feedback: "Brug de tekniske eksperter til at vurdere og implementere teknologien." 
                 },
                 { 
                     image: "choice9b.jpg", 
-                    points: 10, 
-                    feedback: "Lancér produktet i det nye marked med minimal tilpasning. Dette er hurtigere, men risikabelt." 
+                    points: -5, 
+                    feedback: "Ansæt eksterne udviklere til at håndtere teknologiintegrationen." 
                 },
                 { 
                     image: "choice9c.jpg", 
-                    points: 12, 
-                    feedback: "Indgå et partnerskab med en lokal distributør. En god strategi, der udnytter lokale ressourcer." 
+                    points: 10, 
+                    feedback: "Brug kapitalen til at investere i den nye teknologi." 
                 },
                 { 
                     image: "choice9d.jpg", 
-                    points: 8, 
-                    feedback: "Undersøg lokale regler og tilpas produktet derefter. Dette valg tager tid, men kan være nødvendigt." 
+                    points: 12, 
+                    feedback: "Test teknologien i et lille pilotprojekt før fuld implementering." 
                 },
                 { 
                     image: "choice9e.jpg", 
-                    points: 5, 
-                    feedback: "Udskyd ekspansionen indtil du har flere ressourcer. Dette er sikkert, men du risikerer at gå glip af muligheder." 
+                    points: 8, 
+                    feedback: "Konsulter din mentor for at vurdere teknologiens langsigtede værdi." 
                 }
             ]
         },
         {
-            title: "Scenarie 10",
-            description: "Du har en mulighed for at få din virksomhed præsenteret i en stor mediekanal.",
+            title: "Bæredygtighedscertificering",
+            description: "Du overvejer at få dit produkt certificeret som bæredygtigt.",
             choices: [
                 { 
                     image: "choice10a.jpg", 
                     points: 15, 
-                    feedback: "Grib muligheden og forbered en pressemeddelelse. Dette valg udnytter din eksisterende medieplatform effektivt." 
+                    feedback: "Brug dit netværk til at finde de bedste certificeringsorganer." 
                 },
                 { 
                     image: "choice10b.jpg", 
-                    points: 5, 
-                    feedback: "Afvis muligheden for at fokusere på produktudvikling. Et forsigtigt valg, men du mister en stor mulighed." 
+                    points: 10, 
+                    feedback: "Invester kapital i at få produktet certificeret." 
                 },
                 { 
                     image: "choice10c.jpg", 
-                    points: 10, 
-                    feedback: "Forbered nøje dit budskab og målgruppe først. En god strategi, der sikrer et skarpt og målrettet budskab." 
+                    points: 12, 
+                    feedback: "Brug marketing specialisten til at fremhæve bæredygtighedsaspektet i markedsføringen." 
                 },
                 { 
                     image: "choice10d.jpg", 
-                    points: 12, 
-                    feedback: "Brug mediekanalen til at annoncere en stor nyhed. Dette kan maksimere eksponeringen, hvis det gøres korrekt." 
+                    points: 5, 
+                    feedback: "Fokusér på produktudvikling før certificering." 
                 },
                 { 
                     image: "choice10e.jpg", 
                     points: 8, 
-                    feedback: "Udskyd eksponeringen til efter en større opdatering. Dette kan være fornuftigt, men du risikerer at miste momentum." 
+                    feedback: "Konsulter din mentor om certificeringens strategiske værdi." 
                 }
             ]
         }
