@@ -83,6 +83,26 @@ document.addEventListener('DOMContentLoaded', function () {
         playerHand.forEach(card => {
             const cardElement = document.createElement('div');
             cardElement.className = 'action-card';
+
+        // Assign specific classes based on card type
+        if (card === "Venture Capital") {
+            cardElement.classList.add('venture-capital');
+        } else if (card === "Supply Chain Issues") {
+            cardElement.classList.add('supply-chain-issues');
+        } else if (card === "Top Talent") {
+            cardElement.classList.add('top-talent');
+        } else if (card === "Office Space") {
+            cardElement.classList.add('office-space');
+        } else if (card === "Influencer Partnership") {
+            cardElement.classList.add('influencer-partnership');
+        } else if (card === "New Market Entry") {
+            cardElement.classList.add('new-market-entry');
+        } else if (card === "Strategic Partnership") {
+            cardElement.classList.add('strategic-partnership');
+        } else if (card === "Marketing Campaign") {
+            cardElement.classList.add('marketing-campaign');
+        }
+
             cardElement.textContent = card;
             cardElement.addEventListener('click', function () {
                 performAction(card);

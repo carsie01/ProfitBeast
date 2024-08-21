@@ -53,7 +53,7 @@ body {
 .action-card {
     width: 120px;
     height: 180px;
-    background-color: #263253;
+    background-color: #2f323b;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -71,6 +71,43 @@ body {
     transform: scale(1.05);
     background-color: #357ABD;
 }
+/* Example: Custom background colors for different card types */
+.action-card.venture-capital {
+    background-color: #008000; /* Green for Venture Capital */
+}
+
+.action-card.supply-chain-issues {
+    background-color: #ff4500; /* Orange-Red for Supply Chain Issues */
+}
+
+.action-card.top-talent {
+    background-color: #4682b4; /* Steel Blue for Top Talent */
+}
+
+.action-card.office-space {
+    background-color: #8b4513; /* Saddle Brown for Office Space */
+}
+
+.action-card.influencer-partnership {
+    background-color: #ff69b4; /* Hot Pink for Influencer Partnership */
+}
+
+.action-card.new-market-entry {
+    background-color: #32cd32; /* Lime Green for New Market Entry */
+}
+
+.action-card.strategic-partnership {
+    background-color: #6a5acd; /* Slate Blue for Strategic Partnership */
+}
+
+.action-card.marketing-campaign {
+    background-color: #ff8c00; /* Dark Orange for Marketing Campaign */
+}
+
+.action-card:hover {
+    transform: scale(1.05);
+}
+
 
 #deck {
     margin-top: 20px;
