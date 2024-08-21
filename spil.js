@@ -1,12 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Handle the start screen
+    const startButton = document.getElementById('start-button');
+    const startScreen = document.getElementById('start-screen');
+    const gameContainer = document.getElementById('game-container');
+
+    startButton.addEventListener('click', function() {
+        startScreen.style.display = 'none';
+        gameContainer.style.display = 'block';
+        initializeGame(); // Initialize the game after the start button is clicked
+    });
+
+    // Game logic variables
     let playerFunds = 1000000;
     let playerPoints = 0;
-    const targetFunding = 1800000;  // Example target from startup card
-    const targetPoints = 90;        // Example target from startup card
+    const targetFunding = 1800000;
+    const targetPoints = 90;
     const maxHandSize = 5;
+    let currentTurn = 0; // Track the number of turns
 
-    let specialOfferTriggered = false; // Track if the special offer has been triggered
-    let challengeCount = 0; // Track how many challenge cards have been triggered
+    let specialOfferTriggered = false;
+    let challengeCount = 0;
 
     // Deck with only Resource and Opportunity cards
     const deck = [
@@ -67,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function drawCard() {
+        currentTurn++; // Increment the turn counter each time a card is drawn
         if (deck.length > 0) {
             const card = deck.pop();
             playerHand.push(card);
@@ -130,6 +144,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to randomly trigger special offers or challenges
     function maybeTriggerSpecialEvent() {
+        if (currentTurn <= 3) return; // Prevent special events in the first 3 turns
+
         const randomEvent = Math.random();
         
         if (!specialOfferTriggered && randomEvent < 0.1) { // 10% chance to trigger a special offer
@@ -162,7 +178,4 @@ document.addEventListener('DOMContentLoaded', function () {
         updateStats();
         alert(challengeDetails.message); // Show the challenge as a pop-up
     }
-
-    // Start the game
-    initializeGame();
 });
