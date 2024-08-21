@@ -1,225 +1,189 @@
-// Initial game state
-const gameState = {
-    player: {
-        funds: 10000,
-        marketShare: 100,
-        cards: []
-    },
-    computer: {
-        funds: 10000,
-        marketShare: 100,
-        cards: []
-    },
-    deck: [],
-    discardPile: []
-};
+document.addEventListener('DOMContentLoaded', function () {
+    const cardTypes = ["Action", "Resource", "Opportunity", "Challenge", "Special Offer"];
+    let currentPlayer = 2; // Start with player 2 (the human player)
+    let player1Character, player1Startup, player2Character, player2Startup;
+    let player1Cards = [], player2Cards = [];
+    let deck = [];
+    const discardPile = document.querySelector('.discard-pile');
 
-// Function to initialize the game
-function initializeGame() {
-    console.log('Initializing game...');
-    // Setup initial deck and shuffle
-    setupDeck();
-    shuffleDeck();
-    
-    // Draw initial cards for player and computer
-    drawInitialCards();
-    
-    // Render initial game state
-    updateUI();
-}
+    const characters = [
+        { name: "Visionæren", abilities: ["Markedsprediktion", "Inspirerende lederskab", "Særlig mulighed (ressource)"] },
+        { name: "Innovatoren", abilities: ["Hurtig Prototyping", "Patentbeskyttelse", "Særlig mulighed (ressource)"] },
+        { name: "Netværkeren", abilities: ["Forbindelsers kraft", "Samarbejdsprojekter", "Særlig mulighed (ressource)"] },
+        { name: "Selvstarteren", abilities: ["Frugalitet", "Udholdenhed", "Særlig mulighed (ressource)"] }
+    ];
 
-// Function to setup deck
-function setupDeck() {
-    gameState.deck.push({ type: 'resource', effect: 'Venture Capital', value: 500000 });
-    gameState.deck.push({ type: 'resource', effect: 'Supply Chain Issues', value: 2 });
-    gameState.deck.push({ type: 'action', effect: 'BOOST' });
-    gameState.deck.push({ type: 'action', effect: 'BLOCK' });
-    gameState.deck.push({ type: 'action', effect: 'STEAL' });
-    gameState.deck.push({ type: 'opportunity', effect: 'INFLUENCER PARTNERSHIP', value: { marketShare: 10, funds: 10000 } });
-    gameState.deck.push({ type: 'opportunity', effect: 'NEW MARKET ENTRY', value: { marketShare: 10, draw: 1 } });
-    gameState.deck.push({ type: 'challenge', effect: 'Market Crash', value: -10 });
-    gameState.deck.push({ type: 'special', effect: 'Jesper Buch', value: { marketShare: 50, funds: 500000 } });
-    // Add more cards as needed...
-}
+    const startups = [
+        { name: "EcoGenix", goal: { marketShare: 90, funding: 1800000 }, specialPower: "Tjen $100.000 ekstra i Finansiering, hver gang du spiller et grønt kort." },
+        { name: "MedTech Solutions", goal: { marketShare: 80, funding: 2000000 }, specialPower: "Tjen 10 Markedsandelspoint og $200.000 i Finansiering, når du lykkes i en prøve." },
+        { name: "QuickBite", goal: { marketShare: 90, funding: 1000000 }, specialPower: "Få 5 ekstra Markedsandelspoint, når du tilfredsstiller en kunde." },
+        { name: "Learnify", goal: { marketShare: 100, funding: 900000 }, specialPower: "Træk et ekstra kort, når du lancerer et nyt kursus." }
+    ];
 
-// Function to shuffle the deck
-function shuffleDeck() {
-    // Implement Fisher-Yates shuffle algorithm
-    for (let i = gameState.deck.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [gameState.deck[i], gameState.deck[j]] = [gameState.deck[j], gameState.deck[i]];
+    // Show the game rules
+    document.getElementById('game-rules').addEventListener('click', showRules);
+    function showRules() {
+        alert("Game Rules:\n1. Each player draws a Character and StartUp card...\n(Expand with the full rules as needed)");
     }
-}
 
-// Function to draw initial cards for both players
-function drawInitialCards() {
-    for (let i = 0; i < 5; i++) {
-        gameState.player.cards.push(gameState.deck.pop());
-        gameState.computer.cards.push(gameState.deck.pop());
+    // Function to draw a card from the deck
+    function drawCard() {
+        if (deck.length > 0) {
+            return deck.pop(); // Draw the top card from the deck
+        } else {
+            alert("The deck is empty!");
+            return null;
+        }
     }
-}
 
-// Function to apply the effect of a card
-function applyCardEffect(card, player) {
-    switch (card.type) {
-        case 'resource':
-            player.funds += card.value;
-            break;
-        case 'opportunity':
-            player.marketShare += card.value.marketShare;
-            player.funds += card.value.funds || 0;
-            if (card.value.draw) {
-                drawCard(player);
+    // Function to initialize the game
+    function initializeGame() {
+        // Shuffle the deck
+        deck = shuffleDeck([...cardTypes, ...cardTypes, ...cardTypes, ...cardTypes, ...cardTypes, "Special Offer", "Special Offer"]);
+
+        // Draw initial character and startup cards
+        player1Character = characters[Math.floor(Math.random() * characters.length)];
+        player1Startup = startups[Math.floor(Math.random() * startups.length)];
+        player2Character = characters[Math.floor(Math.random() * characters.length)];
+        player2Startup = startups[Math.floor(Math.random() * startups.length)];
+
+        // Display initial character and startup cards
+        alert(`Player 1 Character: ${player1Character.name}, Startup: ${player1Startup.name}`);
+        alert(`Computer Character: ${player2Character.name}, Startup: ${player2Startup.name}`);
+
+        // Draw initial 5 cards for both players
+        for (let i = 0; i < 5; i++) {
+            player1Cards.push(drawCard());
+            player2Cards.push(drawCard());
+        }
+
+        renderCards('.player1', player2Cards);
+        renderCards('.player2', player1Cards);
+    }
+
+    // Discard a card with a slide-in effect towards the discard pile
+    function discardCard(cardElement, player) {
+        const discardPosition = discardPile.getBoundingClientRect();
+        const cardPosition = cardElement.getBoundingClientRect();
+        const translateX = discardPosition.left - cardPosition.left;
+        const translateY = discardPosition.top - cardPosition.top;
+
+        cardElement.style.transform = `translate(${translateX}px, ${translateY}px)`;
+        cardElement.style.opacity = "0";
+
+        setTimeout(() => {
+            discardPile.textContent = `DISCARD PILE: ${cardElement.textContent}`;
+
+            if (player === 'player') {
+                const cardIndex = player1Cards.indexOf(cardElement.textContent);
+                player1Cards.splice(cardIndex, 1); // Remove the card from the player's hand
+                const newCard = drawCard();
+                if (newCard) {
+                    player1Cards.push(newCard); // Draw a new card to replace it
+                }
+                renderCards('.player2', player1Cards); // Re-render the player's cards
+            } else if (player === 'computer') {
+                const cardIndex = player2Cards.indexOf(cardElement.textContent);
+                player2Cards.splice(cardIndex, 1); // Remove the card from the computer's hand
+                const newCard = drawCard();
+                if (newCard) {
+                    player2Cards.push(newCard); // Draw a new card to replace it
+                }
+                renderCards('.player1', player2Cards); // Re-render the computer's cards
             }
-            break;
-        case 'challenge':
-            player.marketShare += card.value;
-            break;
-        case 'action':
-            handleActionCard(card, player);
-            break;
-        case 'special':
-            player.marketShare += card.value.marketShare;
-            player.funds += card.value.funds;
-            break;
+
+            cardElement.style.transform = "translate(0, 0)";
+            cardElement.style.opacity = "1";
+            switchTurn(); // Switch turns after the current player discards a card
+        }, 300);
     }
-    updateUI();
-}
 
-// Function to handle action cards
-function handleActionCard(card, player) {
-    switch (card.effect) {
-        case 'BOOST':
-            player.boosted = true;
-            break;
-        case 'BLOCK':
-            blockOpponentLastMove();
-            break;
-        case 'STEAL':
-            stealCardFromOpponent(player);
-            break;
-    }
-}
-
-// Function to block the opponent's last move
-function blockOpponentLastMove() {
-    console.log("Opponent's last move blocked!");
-}
-
-// Function to steal a card from the opponent
-function stealCardFromOpponent(player) {
-    const opponent = (player === gameState.player) ? gameState.computer : gameState.player;
-    if (opponent.cards.length > 0) {
-        const stolenCard = opponent.cards.pop();
-        player.cards.push(stolenCard);
-        console.log("Stole a card from the opponent!");
-    }
-}
-
-// Function to render cards with interaction only for the player
-function renderCards(elementId, cards, player) {
-    const cardRow = document.getElementById(elementId);
-    cardRow.innerHTML = ''; // Clear current cards
-    cards.forEach((card, index) => {
-        const cardElement = document.createElement('div');
-        cardElement.classList.add('card-back');
-        cardElement.innerText = card.effect; // Display the effect or name of the card
-
-        // Apply different background colors based on card type
-        switch (card.type) {
-            case 'resource':
-                cardElement.style.backgroundColor = '#FFDDC1'; // Light orange for resource cards
+    // Update card color based on type
+    function updateCardColor(cardElement, cardType) {
+        switch (cardType) {
+            case "Action":
+                cardElement.style.backgroundColor = "#83E8FF";
                 break;
-            case 'opportunity':
-                cardElement.style.backgroundColor = '#C1FFD7'; // Light green for opportunity cards
+            case "Resource":
+                cardElement.style.backgroundColor = "#E394A8";
                 break;
-            case 'action':
-                cardElement.style.backgroundColor = '#C1D4FF'; // Light blue for action cards
+            case "Opportunity":
+                cardElement.style.backgroundColor = "#BDDD97";
                 break;
-            case 'challenge':
-                cardElement.style.backgroundColor = '#FFD1C1'; // Light red for challenge cards
+            case "Challenge":
+                cardElement.style.backgroundColor = "#CE94D5";
                 break;
-            case 'special':
-                cardElement.style.backgroundColor = '#F3FFC1'; // Light yellow for special cards
+            case "Special Offer":
+                cardElement.style.backgroundColor = "#E0DA68";
                 break;
+            default:
+                cardElement.style.backgroundColor = "#fff";
         }
+    }
 
-        // Only allow the player to click on their own cards
-        if (player === gameState.player) {
-            cardElement.onclick = () => playCard(index, player);
+    // Function to switch turns
+    function switchTurn() {
+        currentPlayer = currentPlayer === 1 ? 2 : 1; // Toggle between player 1 and player 2
+        if (currentPlayer === 1) {
+            // Computer's turn (Player 1)
+            setTimeout(computerTurn, 1000); // Give a short delay before computer acts
         }
+    }
 
-        cardRow.appendChild(cardElement);
+    // Function for the computer to take its turn (Player 1)
+    function computerTurn() {
+        const randomCardIndex = Math.floor(Math.random() * player2Cards.length);
+        const cardElement = document.querySelectorAll('.player1 .card')[randomCardIndex];
+        discardCard(cardElement, 'computer');
+    }
+
+    // Add event listeners to player's cards for discarding
+    function renderCards(playerClass, cards) {
+        const playerRow = document.querySelector(playerClass);
+        playerRow.innerHTML = ''; // Clear the current cards
+        cards.forEach((cardType, index) => {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'card';
+            cardElement.textContent = cardType;
+            updateCardColor(cardElement, cardType);
+
+            if (currentPlayer === 2 && playerClass === '.player2') {
+                cardElement.addEventListener('click', () => {
+                    if (currentPlayer === 2) {
+                        discardCard(cardElement, 'player');
+                    } else {
+                        alert("It's not your turn!");
+                    }
+                });
+            }
+
+            playerRow.appendChild(cardElement);
+        });
+    }
+
+    // Function to shuffle the deck
+    function shuffleDeck(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Draw a card when the "PROFIT BEAST" deck is clicked
+    const deckElement = document.querySelector('.profit-beast');
+    deckElement.addEventListener('click', () => {
+        if (currentPlayer === 2) {
+            const newCard = drawCard();
+            if (newCard) {
+                player1Cards.push(newCard);
+                renderCards('.player2', player1Cards);
+            }
+        } else {
+            alert('It\'s not your turn!');
+        }
     });
-}
 
-// Function to play a card
-function playCard(cardIndex, player) {
-    if (player !== gameState.player) return; // Prevent AI from playing cards through clicks
-
-    const card = player.cards.splice(cardIndex, 1)[0]; // Remove the card from player's hand
-    applyCardEffect(card, player); // Apply its effect
-    drawCard(player); // Draw a new card to replace it
-    endTurn(); // End the turn and pass control to the AI
-}
-
-// Function to draw a card
-function drawCard(player) {
-    if (gameState.deck.length > 0) {
-        const newCard = gameState.deck.pop();
-        player.cards.push(newCard);
-    }
-}
-
-// Function to update the UI based on the game state
-function updateUI() {
-    document.getElementById('player-funds').innerText = gameState.player.funds;
-    document.getElementById('player-points').innerText = gameState.player.marketShare;
-    document.getElementById('computer-funds').innerText = gameState.computer.funds;
-    document.getElementById('computer-points').innerText = gameState.computer.marketShare;
-
-    renderCards('player-cards', gameState.player.cards, gameState.player);
-    renderCards('computer-cards', gameState.computer.cards, gameState.computer);
-}
-
-// Function to handle the end of a turn and initiate AI's turn
-function endTurn() {
-    checkForWinner(); // Check if the game has been won before AI's turn
-
-    // AI's turn
-    setTimeout(() => {
-        const aiCardIndex = Math.floor(Math.random() * gameState.computer.cards.length);
-        const aiCard = gameState.computer.cards.splice(aiCardIndex, 1)[0];
-        applyCardEffect(aiCard, gameState.computer); // AI plays its card
-        drawCard(gameState.computer); // AI draws a new card
-        updateUI(); // Update UI after AI's turn
-
-        checkForWinner(); // Check if the game has been won after AI's turn
-    }, 1000); // Delay for AI to play, simulating thinking time
-}
-
-// Function to check for a winner
-function checkForWinner() {
-    if (gameState.player.marketShare >= 100 || gameState.player.funds >= 1800000) {
-        alert('Player 1 wins!');
-        resetGame();
-    } else if (gameState.computer.marketShare >= 100 || gameState.computer.funds >= 1800000) {
-        alert('Computer wins!');
-        resetGame();
-    }
-}
-
-// Function to reset the game
-function resetGame() {
-    gameState.player.funds = 10000;
-    gameState.player.marketShare = 100;
-    gameState.computer.funds = 10000;
-    gameState.computer.marketShare = 100;
-    setupDeck();
-    shuffleDeck();
-    drawInitialCards();
-    updateUI();
-}
-
-// Initialize the game when the page loads
-window.onload = initializeGame;
+    // Initialize the game when the page loads
+    initializeGame();
+});
