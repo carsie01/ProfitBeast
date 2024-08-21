@@ -1,189 +1,168 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const cardTypes = ["Action", "Resource", "Opportunity", "Challenge", "Special Offer"];
-    let currentPlayer = 2; // Start with player 2 (the human player)
-    let player1Character, player1Startup, player2Character, player2Startup;
-    let player1Cards = [], player2Cards = [];
-    let deck = [];
-    const discardPile = document.querySelector('.discard-pile');
+    let playerFunds = 1000000;
+    let playerPoints = 0;
+    const targetFunding = 1800000;  // Example target from startup card
+    const targetPoints = 90;        // Example target from startup card
+    const maxHandSize = 5;
 
-    const characters = [
-        { name: "Visionæren", abilities: ["Markedsprediktion", "Inspirerende lederskab", "Særlig mulighed (ressource)"] },
-        { name: "Innovatoren", abilities: ["Hurtig Prototyping", "Patentbeskyttelse", "Særlig mulighed (ressource)"] },
-        { name: "Netværkeren", abilities: ["Forbindelsers kraft", "Samarbejdsprojekter", "Særlig mulighed (ressource)"] },
-        { name: "Selvstarteren", abilities: ["Frugalitet", "Udholdenhed", "Særlig mulighed (ressource)"] }
+    let specialOfferTriggered = false; // Track if the special offer has been triggered
+    let challengeCount = 0; // Track how many challenge cards have been triggered
+
+    // Deck with only Resource and Opportunity cards
+    const deck = [
+        "Venture Capital", "Supply Chain Issues", "Top Talent", "Office Space",
+        "Influencer Partnership", "New Market Entry", "Strategic Partnership",
+        "Marketing Campaign"
     ];
 
-    const startups = [
-        { name: "EcoGenix", goal: { marketShare: 90, funding: 1800000 }, specialPower: "Tjen $100.000 ekstra i Finansiering, hver gang du spiller et grønt kort." },
-        { name: "MedTech Solutions", goal: { marketShare: 80, funding: 2000000 }, specialPower: "Tjen 10 Markedsandelspoint og $200.000 i Finansiering, når du lykkes i en prøve." },
-        { name: "QuickBite", goal: { marketShare: 90, funding: 1000000 }, specialPower: "Få 5 ekstra Markedsandelspoint, når du tilfredsstiller en kunde." },
-        { name: "Learnify", goal: { marketShare: 100, funding: 900000 }, specialPower: "Træk et ekstra kort, når du lancerer et nyt kursus." }
-    ];
+    // Define the actions and their effects for each card
+    const actions = {
+        "Venture Capital": { cost: 0, funding: 500000, points: 0, message: "You secured Venture Capital funding!" },
+        "Supply Chain Issues": { cost: 0, funding: 0, points: 2, message: "You resolved Supply Chain Issues!" },
+        "Top Talent": { cost: 0, funding: 0, points: 5, message: "You hired Top Talent!" },
+        "Office Space": { cost: 200000, funding: 0, points: 5, message: "You upgraded your Office Space!" },
+        "Influencer Partnership": { cost: 100000, funding: 100000, points: 10, message: "You formed an Influencer Partnership!" },
+        "New Market Entry": { cost: 0, funding: 5000, points: 10, message: "You entered a New Market!" },
+        "Strategic Partnership": { cost: 0, funding: 20000, points: 20, message: "You secured a Strategic Partnership!" },
+        "Marketing Campaign": { cost: 15000, funding: 0, points: 8, message: "You launched a Marketing Campaign!" }
+    };
 
-    // Show the game rules
-    document.getElementById('game-rules').addEventListener('click', showRules);
-    function showRules() {
-        alert("Game Rules:\n1. Each player draws a Character and StartUp card...\n(Expand with the full rules as needed)");
-    }
+    // Special Offer actions
+    const specialOffers = {
+        "Jesper Buch": { cost: 0, funding: 500000, points: 50, message: "Jesper Buch joined! Massive growth!" },
+        "Birgit Aaby": { cost: 0, funding: 1000000, points: 0, message: "Birgit Aaby joined! Financial boost!" }
+    };
 
-    // Function to draw a card from the deck
-    function drawCard() {
-        if (deck.length > 0) {
-            return deck.pop(); // Draw the top card from the deck
-        } else {
-            alert("The deck is empty!");
-            return null;
-        }
-    }
+    // Challenge actions
+    const challenges = {
+        "Market Crash": { cost: 0, funding: -100000, points: -10, message: "Market Crash! You lost funding and market share!" },
+        "Supply Chain Issues (Challenge)": { cost: 0, funding: 0, points: -1, message: "Supply Chain Issues! You lost resources." },
+        "Competitor Launch": { cost: 0, funding: 0, points: -5, message: "A Competitor Launched, reducing your market share!" },
+        "Unexpected Expense": { cost: 10000, funding: -10000, points: 0, message: "Unexpected Expense! You lost some funding." }
+    };
 
-    // Function to initialize the game
+    let playerHand = [];
+
     function initializeGame() {
-        // Shuffle the deck
-        deck = shuffleDeck([...cardTypes, ...cardTypes, ...cardTypes, ...cardTypes, ...cardTypes, "Special Offer", "Special Offer"]);
-
-        // Draw initial character and startup cards
-        player1Character = characters[Math.floor(Math.random() * characters.length)];
-        player1Startup = startups[Math.floor(Math.random() * startups.length)];
-        player2Character = characters[Math.floor(Math.random() * characters.length)];
-        player2Startup = startups[Math.floor(Math.random() * startups.length)];
-
-        // Display initial character and startup cards
-        alert(`Player 1 Character: ${player1Character.name}, Startup: ${player1Startup.name}`);
-        alert(`Computer Character: ${player2Character.name}, Startup: ${player2Startup.name}`);
-
-        // Draw initial 5 cards for both players
-        for (let i = 0; i < 5; i++) {
-            player1Cards.push(drawCard());
-            player2Cards.push(drawCard());
+        // Initialize with 5 cards from the deck
+        for (let i = 0; i < maxHandSize; i++) {
+            drawCard();
         }
-
-        renderCards('.player1', player2Cards);
-        renderCards('.player2', player1Cards);
+        updateStats();
     }
 
-    // Discard a card with a slide-in effect towards the discard pile
-    function discardCard(cardElement, player) {
-        const discardPosition = discardPile.getBoundingClientRect();
-        const cardPosition = cardElement.getBoundingClientRect();
-        const translateX = discardPosition.left - cardPosition.left;
-        const translateY = discardPosition.top - cardPosition.top;
-
-        cardElement.style.transform = `translate(${translateX}px, ${translateY}px)`;
-        cardElement.style.opacity = "0";
-
-        setTimeout(() => {
-            discardPile.textContent = `DISCARD PILE: ${cardElement.textContent}`;
-
-            if (player === 'player') {
-                const cardIndex = player1Cards.indexOf(cardElement.textContent);
-                player1Cards.splice(cardIndex, 1); // Remove the card from the player's hand
-                const newCard = drawCard();
-                if (newCard) {
-                    player1Cards.push(newCard); // Draw a new card to replace it
-                }
-                renderCards('.player2', player1Cards); // Re-render the player's cards
-            } else if (player === 'computer') {
-                const cardIndex = player2Cards.indexOf(cardElement.textContent);
-                player2Cards.splice(cardIndex, 1); // Remove the card from the computer's hand
-                const newCard = drawCard();
-                if (newCard) {
-                    player2Cards.push(newCard); // Draw a new card to replace it
-                }
-                renderCards('.player1', player2Cards); // Re-render the computer's cards
-            }
-
-            cardElement.style.transform = "translate(0, 0)";
-            cardElement.style.opacity = "1";
-            switchTurn(); // Switch turns after the current player discards a card
-        }, 300);
-    }
-
-    // Update card color based on type
-    function updateCardColor(cardElement, cardType) {
-        switch (cardType) {
-            case "Action":
-                cardElement.style.backgroundColor = "#83E8FF";
-                break;
-            case "Resource":
-                cardElement.style.backgroundColor = "#E394A8";
-                break;
-            case "Opportunity":
-                cardElement.style.backgroundColor = "#BDDD97";
-                break;
-            case "Challenge":
-                cardElement.style.backgroundColor = "#CE94D5";
-                break;
-            case "Special Offer":
-                cardElement.style.backgroundColor = "#E0DA68";
-                break;
-            default:
-                cardElement.style.backgroundColor = "#fff";
-        }
-    }
-
-    // Function to switch turns
-    function switchTurn() {
-        currentPlayer = currentPlayer === 1 ? 2 : 1; // Toggle between player 1 and player 2
-        if (currentPlayer === 1) {
-            // Computer's turn (Player 1)
-            setTimeout(computerTurn, 1000); // Give a short delay before computer acts
-        }
-    }
-
-    // Function for the computer to take its turn (Player 1)
-    function computerTurn() {
-        const randomCardIndex = Math.floor(Math.random() * player2Cards.length);
-        const cardElement = document.querySelectorAll('.player1 .card')[randomCardIndex];
-        discardCard(cardElement, 'computer');
-    }
-
-    // Add event listeners to player's cards for discarding
-    function renderCards(playerClass, cards) {
-        const playerRow = document.querySelector(playerClass);
-        playerRow.innerHTML = ''; // Clear the current cards
-        cards.forEach((cardType, index) => {
-            const cardElement = document.createElement('div');
-            cardElement.className = 'card';
-            cardElement.textContent = cardType;
-            updateCardColor(cardElement, cardType);
-
-            if (currentPlayer === 2 && playerClass === '.player2') {
-                cardElement.addEventListener('click', () => {
-                    if (currentPlayer === 2) {
-                        discardCard(cardElement, 'player');
-                    } else {
-                        alert("It's not your turn!");
-                    }
-                });
-            }
-
-            playerRow.appendChild(cardElement);
+    document.querySelectorAll('.action-card').forEach(card => {
+        card.addEventListener('click', function () {
+            const action = this.textContent.trim();
+            performAction(action);
         });
-    }
+    });
 
-    // Function to shuffle the deck
-    function shuffleDeck(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
-
-    // Draw a card when the "PROFIT BEAST" deck is clicked
-    const deckElement = document.querySelector('.profit-beast');
-    deckElement.addEventListener('click', () => {
-        if (currentPlayer === 2) {
-            const newCard = drawCard();
-            if (newCard) {
-                player1Cards.push(newCard);
-                renderCards('.player2', player1Cards);
-            }
+    document.getElementById('deck').addEventListener('click', function () {
+        if (playerHand.length < maxHandSize) {
+            drawCard();
         } else {
-            alert('It\'s not your turn!');
+            displayMessage("You can only have 5 cards in your hand!");
         }
     });
 
-    // Initialize the game when the page loads
+    function drawCard() {
+        if (deck.length > 0) {
+            const card = deck.pop();
+            playerHand.push(card);
+            renderHand();
+            maybeTriggerSpecialEvent();
+        } else {
+            displayMessage("The deck is empty!");
+        }
+    }
+
+    function renderHand() {
+        const playerHandContainer = document.getElementById('player-hand');
+        playerHandContainer.innerHTML = '';
+        playerHand.forEach(card => {
+            const cardElement = document.createElement('div');
+            cardElement.className = 'action-card';
+            cardElement.textContent = card;
+            cardElement.addEventListener('click', function () {
+                performAction(card);
+            });
+            playerHandContainer.appendChild(cardElement);
+        });
+    }
+
+    function performAction(action) {
+        if (actions[action] && playerFunds >= actions[action].cost) {
+            playerFunds += actions[action].funding - actions[action].cost;
+            playerPoints += actions[action].points;
+            removeCardFromHand(action);
+            updateStats();
+            displayMessage(actions[action].message);
+            checkWinCondition();
+        } else if (actions[action]) {
+            displayMessage("Not enough funds to perform this action!");
+        }
+    }
+
+    function removeCardFromHand(action) {
+        const index = playerHand.indexOf(action);
+        if (index > -1) {
+            playerHand.splice(index, 1);
+            drawCard(); // Draw a new card after playing one
+            renderHand(); // Update hand display
+        }
+    }
+
+    function updateStats() {
+        document.getElementById('player-funds').textContent = playerFunds;
+        document.getElementById('player-points').textContent = playerPoints;
+    }
+
+    function displayMessage(message) {
+        document.getElementById('game-messages').textContent = message;
+    }
+
+    function checkWinCondition() {
+        if (playerFunds >= targetFunding && playerPoints >= targetPoints) {
+            displayMessage("Congratulations! You have achieved your startup goals!");
+        }
+    }
+
+    // Function to randomly trigger special offers or challenges
+    function maybeTriggerSpecialEvent() {
+        const randomEvent = Math.random();
+        
+        if (!specialOfferTriggered && randomEvent < 0.1) { // 10% chance to trigger a special offer
+            triggerSpecialOffer();
+            specialOfferTriggered = true;
+        } else if (challengeCount < 2 && randomEvent < 0.3) { // 30% chance to trigger a challenge
+            triggerChallenge();
+            challengeCount++;
+        }
+    }
+
+    function triggerSpecialOffer() {
+        const specialOfferKeys = Object.keys(specialOffers);
+        const offer = specialOfferKeys[Math.floor(Math.random() * specialOfferKeys.length)];
+        const offerDetails = specialOffers[offer];
+        
+        playerFunds += offerDetails.funding;
+        playerPoints += offerDetails.points;
+        updateStats();
+        alert(offerDetails.message); // Show the special offer as a pop-up
+    }
+
+    function triggerChallenge() {
+        const challengeKeys = Object.keys(challenges);
+        const challenge = challengeKeys[Math.floor(Math.random() * challengeKeys.length)];
+        const challengeDetails = challenges[challenge];
+        
+        playerFunds += challengeDetails.funding;
+        playerPoints += challengeDetails.points;
+        updateStats();
+        alert(challengeDetails.message); // Show the challenge as a pop-up
+    }
+
+    // Start the game
     initializeGame();
 });

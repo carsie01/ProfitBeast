@@ -3,53 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profit Beast Card Game</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
+    <title>Simple Turn-Based Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="game-container">
-        <!-- Computer Player Info -->
-        <div class="player-info" id="computer-info">
-            <div class="player-avatar">
-                <img src="computer-avatar.png" alt="Computer Avatar"> <!-- Add your computer avatar image here -->
-            </div>
-            <div class="player-stats">
-                <h3>Computer</h3>
-                <p>$<span id="computer-funds">1000000</span> | M<span id="computer-points">0</span>p</p>
-            </div>
+        <!-- Player Info -->
+        <div class="player-info" id="player-info">
+            <h3>Player 1</h3>
+            <p>Funding: $<span id="player-funds">1000000</span></p>
+            <p>Market Share: <span id="player-points">0</span>p</p>
         </div>
 
-        <!-- Computer Cards -->
-        <div class="card-row player1">
-            <!-- Computer's cards will be rendered here by JavaScript -->
+        <!-- Character and Startup Cards -->
+        <div class="card-display">
+            <div class="character-card" id="player-character">Visionary</div>
+            <div class="startup-card" id="player-startup">EcoGenix</div>
         </div>
 
-        <!-- Deck and Discard Pile -->
-        <div class="deck-area">
-            <div class="profit-beast card-back">PROFIT BEAST</div>
-            <div class="discard-pile card-back">DISCARD PILE</div>
-        </div>
-
-        <!-- Player Cards -->
-        <div class="card-row player2">
+        <!-- Action Choices (Player's Hand) -->
+        <div class="actions-container" id="player-hand">
             <!-- Player's cards will be rendered here by JavaScript -->
         </div>
 
-        <!-- Player Info -->
-        <div class="player-info" id="player-info">
-            <div class="player-avatar">
-                <img src="player-avatar.png" alt="Player Avatar"> <!-- Add your player avatar image here -->
-            </div>
-            <div class="player-stats">
-                <h3>Player 1</h3>
-                <p>$<span id="player-funds">1000000</span> | M<span id="player-points">0</span>p</p>
-            </div>
+        <!-- Deck Area -->
+        <div class="deck-area">
+            <div class="profit-beast card-back" id="deck">DRAW A CARD</div>
         </div>
 
-        <!-- Game Rules Button -->
-        <button id="game-rules">Game Rules</button>
+        <!-- Game Messages -->
+        <div id="game-messages"></div>
     </div>
 
-    <script src="spil.js"></script> <!-- Link to your external JavaScript file -->
+    <script src="spil.js"></script>
 </body>
 </html>
