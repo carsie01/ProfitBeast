@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Archivo, sans-serif;
     background-color: #d3bfa5;
     margin: 0;
     padding: 0;
@@ -8,6 +8,8 @@ body {
     align-items: center;
     min-height: 100vh;
     overflow-x: hidden;
+    background-image: url('Images/512530-PI9K6T-283.jpg')
+   ;
 }
 
 .screen {
@@ -126,3 +128,23 @@ body {
         height: 280px;
     }
 }
+.screen img {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+#start-button {
+    background-color: #F8E564;
+    color: #282851;
+    font-weight: 700;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
