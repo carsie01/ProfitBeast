@@ -329,7 +329,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         }
->>>>>>> f9aa9e4c7c841cf12d6f86407a42a524ddecacb2
     ];
 
     startButton.addEventListener('click', function () {
