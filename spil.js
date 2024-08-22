@@ -57,27 +57,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "s2-p1.png", 
                     points: 15, 
-                    feedback: "Udnyt marketing specialisten i dit team til at skabe en målrettet kampagne." 
+                    feedback: "At udnytte interne ressourcer er omkostningseffektivt og sikrer, at marketingstrategien er tæt på virksomhedens kernebudskaber. +15 point" 
                 },
                 { 
                     image: "s2-p2.png", 
                     points: -10, 
-                    feedback: "Hyr et eksternt marketingbureau til at hjælpe med strategien." 
+                    feedback: "Et eksternt bureau kan være dyrt og muligvis ikke have samme forståelse for produktet og markedet som interne ressourcer. -10 point" 
                 },
                 { 
                     image: "s2-p3.png", 
                     points: 12, 
-                    feedback: "Brug dit netværk til at skabe partnerskaber, der kan fremme din markedsføring. " 
+                    feedback: "Partnerskaber kan udvide rækkevidden af markedsføringen og introducere produktet til nye kundesegmenter, hvilket er en omkostningseffektiv strategi. +12 point" 
                 },
                 { 
                     image: "s2-p4.png", 
                     points: 10, 
-                    feedback: "Lav en budgetvenlig online kampagne ved hjælp af sociale medier." 
+                    feedback: "Sociale medier kan være en effektiv kanal til at nå en bred målgruppe med lave omkostninger, hvilket er ideelt i en tidlig fase. +10 point" 
                 },
                 { 
                     image: "s2-p5.png", 
                     points: 5, 
-                    feedback: "Brug kapitalen til at købe annonceplads i relevante medier." 
+                    feedback: "Dette kan være effektivt, men det er en dyrere løsning, og det kan være risikabelt, hvis afkastet ikke er tilstrækkeligt. +5 point" 
                 }
             ]
         },
