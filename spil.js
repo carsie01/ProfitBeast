@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "choice2e.jpg", 
                     points: 5, 
-                    feedback: "v" 
+                    feedback: "Brug kapitalen til at købe annonceplads i relevante medier." 
                 }
             ]
         },
