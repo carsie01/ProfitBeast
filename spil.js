@@ -338,11 +338,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function startGame() {
-        characterCardDisplay.textContent = characterCard;
-        startupCardDisplay.textContent = startupCard;
+        // Set background images for the character and startup cards
+        characterCardDisplay.style.backgroundImage = "url('images/karakter.png')";
+        startupCardDisplay.style.backgroundImage = "url('images/virksomhed.png')";
+        
+        characterCardDisplay.textContent = "";  // Clear text if you want only the image
+        startupCardDisplay.textContent = "";    // Clear text if you want only the image
+        
         loadScenario();
     }
-
+    
     function loadScenario() {
         const scenario = scenarios[currentScenario];
         scenarioTitle.textContent = scenario.title;
