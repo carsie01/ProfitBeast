@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     feedback: "Partnerskaber kan muliggøre hurtigere og mere omkostningseffektiv skalering, hvilket kan være mere bæredygtigt end at udvide internt. +15 point" 
                 },
                 { 
-                    image: "Images/s7-p3.png", 
+                    image: "s7-p3.png", 
                     points: 12, 
                     feedback: "At sikre en større kundebase før skalering minimerer risikoen og sikrer en mere stabil indtægtsstrøm. +12 point" 
                 },
