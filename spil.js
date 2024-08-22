@@ -21,27 +21,27 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Din prototype har brug for yderligere udvikling for at kunne skalere.",
             choices: [
                 { 
-                    image: "choice1a.jpg", 
+                    image: "s1-p1.png", 
                     points: 15, 
                     feedback: "Brug de tekniske eksperter i teamet til at forbedre prototypen." 
                 },
                 { 
-                    image: "choice1b.jpg", 
+                    image: "s1-p2.png", 
                     points: -5, 
                     feedback: "Outsource udviklingen til en ekstern udvikler." 
                 },
                 { 
-                    image: "choice1c.jpg", 
+                    image: "s1-p3.png", 
                     points: 12, 
                     feedback: "Test prototypen med tidlige kunder og tilpas efter deres feedback." 
                 },
                 { 
-                    image: "choice1d.jpg", 
+                    image: "s1-p4.png", 
                     points: 10, 
                     feedback: "Brug mentorens erfaring til at identificere de vigtigste udviklingsområder." 
                 },
                 { 
-                    image: "choice1e.jpg", 
+                    image: "s1-p5.png", 
                     points: 8, 
                     feedback: "Invester en del af din kapital i nye værktøjer til udvikling." 
                 }

@@ -11,8 +11,8 @@ body {
 }
 
 .screen {
-    width: 90%;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 70vw;
     height: auto;
     background-color: white;
     border-radius: 10px;
@@ -65,9 +65,10 @@ body {
 
 .card {
     width: 45%;
-    max-width: 220px;
-    height: 200px;
-    background-size: cover;
+    max-width: 200px;
+    height: 250px;
+    background-size:contain;
+    background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
     cursor: pointer;
@@ -105,8 +106,7 @@ body {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
+    max-width: 100vw;
     border-radius: 10px;
     text-align: center;
 }
