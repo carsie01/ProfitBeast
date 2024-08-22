@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Ny teknologi kan forbedre dit produkt, men det kræver investering.",
             choices: [
                 { 
-                    Image: "../images/s9-p1.png", 
+                    image: "../images/s9-p1.png", 
                     points: 15, 
                     feedback: "At bruge interne eksperter sikrer, at teknologiintegrationen er godt tilpasset virksomhedens behov og mål. +15 point" 
                 },
