@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     feedback: "At ignorere feedback kan føre til, at man overser kritiske forbedringsmuligheder, hvilket kan skade produktets succes. -10 point" 
                 },
                 { 
-                    image: "s4-p4.png", 
+                    image: "../images/s4-p4.png", 
                     points: 10, 
                     feedback: "Bedre kommunikation kan hjælpe med at klarlægge produktets værdi og forbedre kundernes oplevelse.Bedre kommunikation kan hjælpe med at klarlægge produktets værdi og forbedre kundernes oplevelse. +10 point" 
                 },
