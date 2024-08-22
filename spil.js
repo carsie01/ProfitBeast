@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let points = 0;
     let currentScenario = 0;
 
-    const characterCard = "karakter";  // Placeholder: Assign based on user selection or random draw
-    const startupCard = "Virksomhed";  // Placeholder: Assign based on user selection or random draw
+    const characterCard = "karakter.png";  // Image file for character card
+    const startupCard = "virksomhed.png";  // Image file for startup card
 
-    const scenarios = [
+    const scenarios = [ 
         {
             title: "Produktudvikling",
             description: "Din prototype har brug for yderligere udvikling for at kunne skalere.",
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
+
         {
             title: "Marketingstrategi",
             description: "Du skal beslutte, hvordan du bedst markedsfører din prototype.",
@@ -329,6 +330,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         }
+>>>>>>> 33e014cf902785276bbb61f6bcf5b23bf08aae73
     ];
 
     startButton.addEventListener('click', function () {
@@ -338,8 +340,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function startGame() {
-        characterCardDisplay.textContent = characterCard;
-        startupCardDisplay.textContent = startupCard;
+        // Indsæt billederne for karakterkort og virksomheds kort
+        characterCardDisplay.innerHTML = `<img src="images/${characterCard}" alt="Character Card" style="width: 100%; height: auto;">`;
+        startupCardDisplay.innerHTML = `<img src="images/${startupCard}" alt="Startup Card" style="width: 100%; height: auto;">`;
         loadScenario();
     }
 
@@ -354,17 +357,8 @@ document.addEventListener('DOMContentLoaded', function () {
             cardElement.className = 'card';
             cardElement.style.backgroundImage = `url('images/${choice.image}')`;
 
-            // Adjust points based on character and startup
-            let adjustedPoints = choice.points;
-            if (characterCard === "Visionary" && scenario.title === "Scenarie 1") {
-                adjustedPoints += 2; // Example bonus for Visionary on Scenario 1
-            }
-            if (startupCard === "GreenTech Solutions" && scenario.title === "Scenarie 2") {
-                adjustedPoints += 3; // Example bonus for GreenTech on Scenario 2
-            }
-
             cardElement.addEventListener('click', function () {
-                points += adjustedPoints;
+                points += choice.points;
                 pointsDisplay.textContent = points;
                 showFeedback(choice.feedback); // Replace alert with this function
             });

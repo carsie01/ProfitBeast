@@ -25,25 +25,6 @@ body {
     margin: 20px;
 }
 
-.player-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.player-avatar img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.player-stats {
-    flex-grow: 1;
-    text-align: right;
-}
-
 .character-startup {
     display: flex;
     flex-direction: column;
@@ -67,7 +48,7 @@ body {
     width: 45%;
     max-width: 200px;
     height: 250px;
-    background-size:contain;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
@@ -143,17 +124,5 @@ body {
     .card {
         width: 220px;
         height: 280px;
-    }
-
-    .player-info {
-        flex-direction: row;
-    }
-
-    .player-avatar {
-        margin-right: 20px;
-    }
-
-    .player-stats {
-        text-align: left;
     }
 }
