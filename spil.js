@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     feedback: "Partnerskaber kan muliggøre hurtigere og mere omkostningseffektiv skalering, hvilket kan være mere bæredygtigt end at udvide internt. +15 point" 
                 },
                 { 
-                    image: "s7-p3.png", 
+                    image: "Images/s7-p3.png", 
                     points: 12, 
                     feedback: "At sikre en større kundebase før skalering minimerer risikoen og sikrer en mere stabil indtægtsstrøm. +12 point" 
                 },
@@ -346,8 +346,8 @@ document.addEventListener('DOMContentLoaded', function () {
         backgroundMusic.play(); // Start the background music
         loadScenario();
         // Set background images for the character and startup cards
-        characterCardDisplay.style.backgroundImage = "url('Images/karakter.png')";
-        startupCardDisplay.style.backgroundImage = "url('Images/virksomhed.png')";
+        characterCardDisplay.style.backgroundImage = "url('images/karakter.png')";
+        startupCardDisplay.style.backgroundImage = "url('images/virksomhed.png')";
         
         characterCardDisplay.textContent = "";  // Clear text if you want only the image
         startupCardDisplay.textContent = "";    // Clear text if you want only the image
