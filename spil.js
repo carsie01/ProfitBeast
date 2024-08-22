@@ -419,11 +419,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function endGame() {
-        gameScreen.innerHTML = `<h2>Game Over</h2><p>You scored ${points} points.</p>`;
+        gameScreen.innerHTML = `<h2>Spillet er slut</h2><p>Du fik${points} point.</p>`;
         if (points >= 100) {
-            gameScreen.innerHTML += "<p>Congratulations! You successfully built GreenTech Solutions!</p>";
+            gameScreen.innerHTML += "<p>Tillykke! Du har med succes opbygget GreenTech Solutions!!</p>";
         } else {
-            gameScreen.innerHTML += "<p>Unfortunately, you did not accumulate enough points to succeed. Try again!</p>";
+            gameScreen.innerHTML += "<p>Desværre, du opnåede ikke nok point til at få succes. Prøv igen!</p>";
         }
     }
 });
