@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const scenarioDescription = document.getElementById('scenario-description');
     const choicesContainer = document.getElementById('choices-container');
     const pointsDisplay = document.getElementById('points');
+    const modal = document.getElementById('modal');
+    const modalFeedback = document.getElementById('modal-feedback');
+    const closeModal = document.getElementById('close-modal');
 
     let points = 0;
     let currentScenario = 0;
@@ -363,12 +366,29 @@ document.addEventListener('DOMContentLoaded', function () {
             cardElement.addEventListener('click', function () {
                 points += adjustedPoints;
                 pointsDisplay.textContent = points;
-                alert(choice.feedback); // Show feedback after selection
-                nextScenario(); // Automatically load the next scenario after a choice is made
+                showFeedback(choice.feedback); // Replace alert with this function
             });
             choicesContainer.appendChild(cardElement);
         });
     }
+
+    function showFeedback(feedback) {
+        modalFeedback.textContent = feedback;
+        modal.style.display = "block";
+    }
+
+    closeModal.addEventListener('click', function () {
+        modal.style.display = "none";
+        nextScenario(); // Automatically load the next scenario after closing the modal
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            nextScenario(); // Automatically load the next scenario after closing the modal
+        }
+    });
+
 
     function nextScenario() {
         currentScenario++;
