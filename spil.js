@@ -52,27 +52,27 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Du skal beslutte, hvordan du bedst markedsfører din prototype.",
             choices: [
                 { 
-                    image: "choice2a.jpg", 
+                    image: "s2-p1.png", 
                     points: 15, 
                     feedback: "Udnyt marketing specialisten i dit team til at skabe en målrettet kampagne." 
                 },
                 { 
-                    image: "choice2b.jpg", 
+                    image: "s2-p2.png", 
                     points: -10, 
                     feedback: "Hyr et eksternt marketingbureau til at hjælpe med strategien." 
                 },
                 { 
-                    image: "choice2c.jpg", 
+                    image: "s2-p3.png", 
                     points: 12, 
                     feedback: "Brug dit netværk til at skabe partnerskaber, der kan fremme din markedsføring. " 
                 },
                 { 
-                    image: "choice2d.jpg", 
+                    image: "s2-p4.png", 
                     points: 10, 
                     feedback: "Lav en budgetvenlig online kampagne ved hjælp af sociale medier." 
                 },
                 { 
-                    image: "choice2e.jpg", 
+                    image: "s2-p5.png", 
                     points: 5, 
                     feedback: "Brug kapitalen til at købe annonceplads i relevante medier." 
                 }
@@ -83,27 +83,27 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Du overvejer, hvordan du bedst kan udvide din forretning.",
             choices: [
                 { 
-                    image: "choice3a.jpg", 
+                    image: "s3-p1.png", 
                     points: 15, 
                     feedback: "Brug dit netværk til at finde potentielle samarbejdspartnere." 
                 },
                 { 
-                    image: "choice3b.jpg", 
+                    image: "s3-p2.png", 
                     points: 10, 
                     feedback: "Fokusér på at skalere organisk gennem nuværende kunder." 
                 },
                 { 
-                    image: "choice3c.jpg", 
+                    image: "s3-p3.png", 
                     points: 8, 
                     feedback: "Invester i at rekruttere flere medlemmer til teamet." 
                 },
                 { 
-                    image: "choice3d.jpg", 
+                    image: "s3-p4.png", 
                     points: 5, 
                     feedback: "Brug kapitalen til at købe mindre konkurrenter." 
                 },
                 { 
-                    image: "choice3e.jpg", 
+                    image: "s3-p5.png", 
                     points: 12, 
                     feedback: "Konsulter med din mentor for at udvikle en ekspansionsstrategi." 
                 }
@@ -114,27 +114,27 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Du har modtaget blandet feedback fra dine tidlige brugere.",
             choices: [
                 { 
-                    image: "choice4a.jpg", 
+                    image: "s4-p1.png", 
                     points: 12, 
                     feedback: "Indsaml mere feedback gennem dit netværk for at få flere data. " 
                 },
                 { 
-                    image: "choice4b.jpg", 
+                    image: "s4-p2.png", 
                     points: 12, 
                     feedback: "Brug feedbacken til at foretage hurtige justeringer på prototypen." 
                 },
                 { 
-                    image: "choice4c.jpg", 
+                    image: "s4-p3.png", 
                     points: -10, 
                     feedback: "Ignorér de mindre negative kommentarer og fortsæt med din plan." 
                 },
                 { 
-                    image: "choice4d.jpg", 
+                    image: "s4-p4.png", 
                     points: 10, 
                     feedback: "Brug din marketing specialist til at forbedre kundekommunikationen. " 
                 },
                 { 
-                    image: "choice4e.jpg", 
+                    image: "s4-p5.png", 
                     points: 8, 
                     feedback: "Konsulter med din mentor for at prioritere ændringer. " 
                 }
@@ -145,27 +145,27 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Du overvejer at indgå et partnerskab med en større virksomhed.",
             choices: [
                 { 
-                    image: "choice5a.jpg", 
+                    image: "s5-p1.png", 
                     points: 5, 
                     feedback: "Udvikl prototypen yderligere før du indgår i et partnerskab." 
                 },
                 { 
-                    image: "choice5b.jpg", 
+                    image: "s5-p2.png", 
                     points: 12, 
                     feedback: "Brug din mentor til at etablere kontakt og forhandle en aftale." 
                 },
                 { 
-                    image: "choice5c.jpg", 
+                    image: "s5-p3.png", 
                     points: 10, 
                     feedback: "Tag kontakt til virksomheden direkte og fremlæg din vision." 
                 },
                 { 
-                    image: "choice5d.jpg", 
+                    image: "s5-p4.png", 
                     points: 5, 
                     feedback: "Brug kapitalen til at gøre din virksomhed mere attraktiv for partnere. " 
                 },
                 { 
-                    image: "choice5e.jpg", 
+                    image: "s5-p5.png", 
                     points: 15, 
                     feedback: "Brug dit netværk til at identificere de bedste potentielle partnere. " 
                 }
@@ -176,27 +176,27 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "En ny konkurrent er dukket op på markedet.",
             choices: [
                 { 
-                    image: "choice6a.jpg", 
+                    image: "s6-p1.png", 
                     points: 9, 
                     feedback: "Brug dit netværk til at få indsigt i konkurrentens strategi." 
                 },
                 { 
-                    image: "choice6b.jpg", 
+                    image: "s6-p2.png", 
                     points: 15, 
                     feedback: "Differentier dit produkt ved at fokusere på unikke funktioner." 
                 },
                 { 
-                    image: "choice6c.jpg", 
+                    image: "s6-p3.png", 
                     points: 5, 
                     feedback: "Sænk prisen for at konkurrere direkte." 
                 },
                 { 
-                    image: "choice6d.jpg", 
+                    image: "s6-p4.png", 
                     points: 10, 
                     feedback: "Brug marketing specialisten til at skabe en kampagne, der fremhæver dine styrker." 
                 },
                 { 
-                    image: "choice6e.jpg", 
+                    image: "s6-p5.png", 
                     points: 8, 
                     feedback: "Konsulter din mentor for at justere din strategi i forhold til konkurrencen" 
                 }
@@ -207,27 +207,27 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Din prototype er klar til at skalere op.",
             choices: [
                 { 
-                    image: "choice7a.jpg", 
+                    image: "s7-p1.png", 
                     points: 10, 
                     feedback: "Brug kapitalen til at opskalere produktionen." 
                 },
                 { 
-                    image: "choice7b.jpg", 
+                    image: "s7-p2.png", 
                     points: 15, 
                     feedback: "Udnyt netværket til at finde distributører eller produktionspartnere." 
                 },
                 { 
-                    image: "choice7c.jpg", 
+                    image: "s7-p3.png", 
                     points: 12, 
                     feedback: "Fokuser på at øge kundebasen før du skalerer." 
                 },
                 { 
-                    image: "choice7d.jpg", 
+                    image: "s7-p4.png", 
                     points: 8, 
                     feedback: "Konsulter din mentor for at sikre, at du er klar til skalering." 
                 },
                 { 
-                    image: "choice7e.jpg", 
+                    image: "s7-p5.png", 
                     points: 5, 
                     feedback: "Ansæt mere personale for at understøtte skaleringen." 
                 }
@@ -238,27 +238,27 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Feedback tyder på, at din brandidentitet ikke er klar nok.",
             choices: [
                 { 
-                    image: "choice8a.jpg", 
+                    image: "s8-p1.png", 
                     points: 15, 
                     feedback: "Brug marketing specialisten til at udvikle en ny brandstrategi." 
                 },
                 { 
-                    image: "choice8b.jpg", 
+                    image: "s8-p2.png", 
                     points: -10, 
                     feedback: "Hyr et eksternt branding bureau til at hjælpe med rebrandingen." 
                 },
                 { 
-                    image: "choice8c.jpg", 
+                    image: "s8-p3.png", 
                     points: 12, 
                     feedback: "Brug dit netværk til at få feedback på den nye branding." 
                 },
                 { 
-                    image: "choice8d.jpg", 
+                    image: "s8-p4.png", 
                     points: 8, 
                     feedback: "Foretag mindre justeringer baseret på den oprindelige feedback." 
                 },
                 { 
-                    image: "choice8e.jpg", 
+                    image: "s8-p5.png", 
                     points: 10, 
                     feedback: "Konsulter din mentor for at sikre, at rebrandingen stemmer overens med virksomhedens vision." 
                 }
@@ -269,27 +269,27 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Ny teknologi kan forbedre dit produkt, men det kræver investering.",
             choices: [
                 { 
-                    image: "choice9a.jpg", 
+                    image: "s9-p1.png", 
                     points: 15, 
                     feedback: "Brug de tekniske eksperter til at vurdere og implementere teknologien." 
                 },
                 { 
-                    image: "choice9b.jpg", 
+                    image: "s9-p2.png", 
                     points: -5, 
                     feedback: "Ansæt eksterne udviklere til at håndtere teknologiintegrationen." 
                 },
                 { 
-                    image: "choice9c.jpg", 
+                    image: "s9-p3.png", 
                     points: 10, 
                     feedback: "Brug kapitalen til at investere i den nye teknologi." 
                 },
                 { 
-                    image: "choice9d.jpg", 
+                    image: "s9-p4.png", 
                     points: 12, 
                     feedback: "Test teknologien i et lille pilotprojekt før fuld implementering." 
                 },
                 { 
-                    image: "choice9e.jpg", 
+                    image: "s9-p5.png", 
                     points: 8, 
                     feedback: "Konsulter din mentor for at vurdere teknologiens langsigtede værdi." 
                 }
@@ -300,27 +300,27 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Du overvejer at få dit produkt certificeret som bæredygtigt.",
             choices: [
                 { 
-                    image: "choice10a.jpg", 
+                    image: "s10-p1.png", 
                     points: 15, 
                     feedback: "Brug dit netværk til at finde de bedste certificeringsorganer." 
                 },
                 { 
-                    image: "choice10b.jpg", 
+                    image: "s10-p2.png", 
                     points: 10, 
                     feedback: "Invester kapital i at få produktet certificeret." 
                 },
                 { 
-                    image: "choice10c.jpg", 
+                    image: "s10-p3.png", 
                     points: 12, 
                     feedback: "Brug marketing specialisten til at fremhæve bæredygtighedsaspektet i markedsføringen." 
                 },
                 { 
-                    image: "choice10d.jpg", 
+                    image: "s10-p4.png", 
                     points: 5, 
                     feedback: "Fokusér på produktudvikling før certificering." 
                 },
                 { 
-                    image: "choice10e.jpg", 
+                    image: "s10-p5.png", 
                     points: 8, 
                     feedback: "Konsulter din mentor om certificeringens strategiske værdi." 
                 }
