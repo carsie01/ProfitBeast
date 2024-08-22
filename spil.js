@@ -26,27 +26,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "s1-p1.png", 
                     points: 15, 
-                    feedback: "Brug de tekniske eksperter i teamet til at forbedre prototypen." 
+                    feedback: "Dette er en stærk tilgang, da interne eksperter har dyb forståelse for produktet og kan sikre, at forbedringerne er tilpasset virksomhedens overordnede vision og mål. +15 point" 
                 },
                 { 
                     image: "s1-p2.png", 
                     points: -5, 
-                    feedback: "Outsource udviklingen til en ekstern udvikler." 
+                    feedback: "Outsourcing kan være risikabelt i den tidlige fase, da det kan føre til manglende kontrol over kvaliteten og retningen af udviklingen. -5 point" 
                 },
                 { 
                     image: "s1-p3.png", 
                     points: 12, 
-                    feedback: "Test prototypen med tidlige kunder og tilpas efter deres feedback." 
+                    feedback: "Dette er en klog beslutning, da det sikrer, at produktet opfylder kundernes behov, hvilket kan føre til bedre markedsaccept. +12 point" 
                 },
                 { 
                     image: "s1-p4.png", 
                     points: 10, 
-                    feedback: "Brug mentorens erfaring til at identificere de vigtigste udviklingsområder." 
+                    feedback: "Mentorens erfaring kan være uvurderlig til at prioritere ressourcer korrekt og undgå faldgruber, hvilket kan spare tid og penge. +10 point" 
                 },
                 { 
                     image: "s1-p5.png", 
                     points: 8, 
-                    feedback: "Invester en del af din kapital i nye værktøjer til udvikling." 
+                    feedback: "Nye værktøjer kan forbedre effektiviteten og kvaliteten af udviklingsprocessen, men det er vigtigt at sikre, at investeringen er nødvendig og giver værdi. +8 point" 
                 }
             ]
         },
