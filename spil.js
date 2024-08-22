@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Din prototype har brug for yderligere udvikling for at kunne skalere.",
             choices: [
                 { 
-                    image: "s1-p1.png", 
+                    image: "Image/s1-p1.png", 
                     points: 15, 
                     feedback: "Dette er en stærk tilgang, da interne eksperter har dyb forståelse for produktet og kan sikre, at forbedringerne er tilpasset virksomhedens overordnede vision og mål. +15 point" 
                 },
