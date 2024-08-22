@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('modal');
     const modalFeedback = document.getElementById('modal-feedback');
     const closeModal = document.getElementById('close-modal');
+    const clickSound = new Audio('sounds/click.mp3');
+    const backgroundMusic = new Audio('sounds/Stardew Valley OST - Stardew Valley Overture.mp3'); // 
+    backgroundMusic.loop = true; // Ensure the music loops
+    backgroundMusic.volume = 0.5; // Set the volume (0.0 to 1.0)
+
 
     let points = 0;
     let currentScenario = 0;
@@ -338,6 +343,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function startGame() {
+        backgroundMusic.play(); // Start the background music
+        loadScenario();
         // Set background images for the character and startup cards
         characterCardDisplay.style.backgroundImage = "url('images/karakter.png')";
         startupCardDisplay.style.backgroundImage = "url('images/virksomhed.png')";
@@ -354,25 +361,25 @@ document.addEventListener('DOMContentLoaded', function () {
         scenarioDescription.textContent = scenario.description;
         choicesContainer.innerHTML = ''; // Clear previous choices
 
-        scenario.choices.forEach((choice, index) => {
+        scenario.choices.forEach((choice) => {
             const cardElement = document.createElement('div');
             cardElement.className = 'card';
             cardElement.style.backgroundImage = `url('images/${choice.image}')`;
 
             // Adjust points based on character and startup
             let adjustedPoints = choice.points;
-            if (characterCard === "Visionary" && scenario.title === "Scenarie 1") {
-                adjustedPoints += 2; // Example bonus for Visionary on Scenario 1
-            }
-            if (startupCard === "GreenTech Solutions" && scenario.title === "Scenarie 2") {
-                adjustedPoints += 3; // Example bonus for GreenTech on Scenario 2
-            }
 
             cardElement.addEventListener('click', function () {
                 points += adjustedPoints;
                 pointsDisplay.textContent = points;
-                showFeedback(choice.feedback); // Replace alert with this function
+
+                // Play click sound
+                clickSound.play();
+
+                // Show feedback in modal
+                showFeedback(choice.feedback);
             });
+
             choicesContainer.appendChild(cardElement);
         });
     }
@@ -380,20 +387,27 @@ document.addEventListener('DOMContentLoaded', function () {
     function showFeedback(feedback) {
         modalFeedback.textContent = feedback;
         modal.style.display = "block";
-    }
 
-    closeModal.addEventListener('click', function () {
-        modal.style.display = "none";
-        nextScenario(); // Automatically load the next scenario after closing the modal
-    });
-
-    window.addEventListener('click', function (event) {
-        if (event.target == modal) {
+        // Ensure that the game proceeds to the next scenario after the feedback is closed
+        const closeHandler = function () {
             modal.style.display = "none";
-            nextScenario(); // Automatically load the next scenario after closing the modal
-        }
-    });
+            closeModal.removeEventListener('click', closeHandler); // Remove listener to avoid stacking
+            window.removeEventListener('click', outsideClickHandler); // Remove listener to avoid stacking
+            nextScenario(); // Load the next scenario
+        };
 
+        const outsideClickHandler = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                closeModal.removeEventListener('click', closeHandler); // Remove listener to avoid stacking
+                window.removeEventListener('click', outsideClickHandler); // Remove listener to avoid stacking
+                nextScenario(); // Load the next scenario
+            }
+        };
+
+        closeModal.addEventListener('click', closeHandler);
+        window.addEventListener('click', outsideClickHandler);
+    }
 
     function nextScenario() {
         currentScenario++;
@@ -405,11 +419,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function endGame() {
-        gameScreen.innerHTML = `<h2>Spillet er slut</h2><p> Du fik ${points} points.</p>`;
+        gameScreen.innerHTML = `<h2>Game Over</h2><p>You scored ${points} points.</p>`;
         if (points >= 100) {
-            gameScreen.innerHTML += "<p>Tillykke! Du har med succes opbygget GreenTech Solutions! </p>";
+            gameScreen.innerHTML += "<p>Congratulations! You successfully built GreenTech Solutions!</p>";
         } else {
-            gameScreen.innerHTML += "<p>Desværre, du opnåede ikke nok point til at få succes. Prøv igen!</p>";
+            gameScreen.innerHTML += "<p>Unfortunately, you did not accumulate enough points to succeed. Try again!</p>";
         }
     }
 });
