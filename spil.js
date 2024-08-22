@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Din prototype har brug for yderligere udvikling for at kunne skalere.",
             choices: [
                 { 
-                    image: "Image/s1-p1.png", 
+                    image: "s1-p1.png",
                     points: 15, 
                     feedback: "Dette er en stærk tilgang, da interne eksperter har dyb forståelse for produktet og kan sikre, at forbedringerne er tilpasset virksomhedens overordnede vision og mål. +15 point" 
                 },
@@ -346,8 +346,8 @@ document.addEventListener('DOMContentLoaded', function () {
         backgroundMusic.play(); // Start the background music
         loadScenario();
         // Set background images for the character and startup cards
-        characterCardDisplay.style.backgroundImage = "url('images/karakter.png')";
-        startupCardDisplay.style.backgroundImage = "url('images/virksomhed.png')";
+        characterCardDisplay.style.backgroundImage = "url('Images/karakter.png')";
+        startupCardDisplay.style.backgroundImage = "url('Images/virksomhed.png')";
         
         characterCardDisplay.textContent = "";  // Clear text if you want only the image
         startupCardDisplay.textContent = "";    // Clear text if you want only the image
