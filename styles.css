@@ -65,9 +65,10 @@ body {
 
 .card {
     width: 45%;
-    max-width: 220px;
-    height: 200px;
-    background-size: cover;
+    max-width: 200px;
+    height: 250px;
+    background-size:contain;
+    background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
     cursor: pointer;

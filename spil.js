@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: "Din prototype har brug for yderligere udvikling for at kunne skalere.",
             choices: [
                 { 
-                    image: "choice1a.jpg", 
+                    image: "S1.P1.png", 
                     points: 15, 
                     feedback: "Brug de tekniske eksperter i teamet til at forbedre prototypen." 
                 },
