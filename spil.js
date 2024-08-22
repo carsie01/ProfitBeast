@@ -212,27 +212,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "s7-p1.png", 
                     points: 10, 
-                    feedback: "Brug kapitalen til at opskalere produktionen." 
+                    feedback: "Kapitalinvestering i produktion kan accelerere væksten, men det er afgørende at sikre, at efterspørgslen er tilstrækkelig. +10 point" 
                 },
                 { 
                     image: "s7-p2.png", 
                     points: 15, 
-                    feedback: "Udnyt netværket til at finde distributører eller produktionspartnere." 
+                    feedback: "Partnerskaber kan muliggøre hurtigere og mere omkostningseffektiv skalering, hvilket kan være mere bæredygtigt end at udvide internt. +15 point" 
                 },
                 { 
                     image: "s7-p3.png", 
                     points: 12, 
-                    feedback: "Fokuser på at øge kundebasen før du skalerer." 
+                    feedback: "At sikre en større kundebase før skalering minimerer risikoen og sikrer en mere stabil indtægtsstrøm. +12 point" 
                 },
                 { 
                     image: "s7-p4.png", 
                     points: 8, 
-                    feedback: "Konsulter din mentor for at sikre, at du er klar til skalering." 
+                    feedback: "Mentoren kan give værdifuld vejledning, men det er vigtigt at handle hurtigt og beslutsomt. +8 point" 
                 },
                 { 
                     image: "s7-p5.png", 
                     points: 5, 
-                    feedback: "Ansæt mere personale for at understøtte skaleringen." 
+                    feedback: "Flere medarbejdere kan hjælpe med at håndtere vækst, men det øger også omkostningerne og risiciene. +5 point" 
                 }
             ]
         },
@@ -243,27 +243,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "s8-p1.png", 
                     points: 15, 
-                    feedback: "Brug marketing specialisten til at udvikle en ny brandstrategi." 
+                    feedback: "At bruge interne ressourcer sikrer, at brandstrategien er tæt på virksomhedens vision og mål, hvilket kan styrke markedspositionen. +15 point" 
                 },
                 { 
                     image: "s8-p2.png", 
                     points: -10, 
-                    feedback: "Hyr et eksternt branding bureau til at hjælpe med rebrandingen." 
+                    feedback: "Eksterne bureauer kan være dyre og muligvis ikke forstå virksomhedens kerneidentitet så godt som interne ressourcer. -10 point" 
                 },
                 { 
                     image: "s8-p3.png", 
                     points: 12, 
-                    feedback: "Brug dit netværk til at få feedback på den nye branding." 
+                    feedback: "Feedback fra netværket kan give uvurderlige perspektiver og hjælpe med at forme en brandidentitet, der resonerer på markedet. +12 point" 
                 },
                 { 
                     image: "s8-p4.png", 
                     points: 8, 
-                    feedback: "Foretag mindre justeringer baseret på den oprindelige feedback." 
+                    feedback: "Mindre justeringer kan være omkostningseffektive, men de kan også være utilstrækkelige, hvis brandproblemerne er fundamentale. +8 point" 
                 },
                 { 
                     image: "s8-p5.png", 
                     points: 10, 
-                    feedback: "Konsulter din mentor for at sikre, at rebrandingen stemmer overens med virksomhedens vision." 
+                    feedback: "Mentoren kan sikre, at rebrandingen er strategisk fornuftig, men det er vigtigt at sikre, at handlingen er rettidig. +10" 
                 }
             ]
         },
@@ -274,27 +274,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "s9-p1.png", 
                     points: 15, 
-                    feedback: "Brug de tekniske eksperter til at vurdere og implementere teknologien." 
+                    feedback: "At bruge interne eksperter sikrer, at teknologiintegrationen er godt tilpasset virksomhedens behov og mål. +15 point" 
                 },
                 { 
                     image: "s9-p2.png", 
                     points: -5, 
-                    feedback: "Ansæt eksterne udviklere til at håndtere teknologiintegrationen." 
+                    feedback: "Eksterne udviklere kan være dyrere og mindre engagerede i virksomhedens langsigtede succes, hvilket kan føre til suboptimale løsninger. -5 point" 
                 },
                 { 
                     image: "s9-p3.png", 
                     points: 10, 
-                    feedback: "Brug kapitalen til at investere i den nye teknologi." 
+                    feedback: "BInvestering i teknologi kan give en konkurrencefordel, men det er vigtigt at sikre, at teknologien er den rette for virksomheden. +10 point" 
                 },
                 { 
                     image: "s9-p4.png", 
                     points: 12, 
-                    feedback: "Test teknologien i et lille pilotprojekt før fuld implementering." 
+                    feedback: "Et pilotprojekt reducerer risikoen ved at sikre, at teknologien fungerer som forventet, før der investeres yderligere. +12 point" 
                 },
                 { 
                     image: "s9-p5.png", 
                     points: 8, 
-                    feedback: "Konsulter din mentor for at vurdere teknologiens langsigtede værdi." 
+                    feedback: "Mentorens erfaring kan hjælpe med at vurdere, om investeringen i teknologien vil give langsigtede fordele, men det kan forsinke beslutningstagningen. +8 point" 
                 }
             ]
         },
@@ -305,27 +305,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "s10-p1.png", 
                     points: 15, 
-                    feedback: "Brug dit netværk til at finde de bedste certificeringsorganer." 
+                    feedback: "Netværk kan hjælpe med at identificere de mest troværdige og relevante certificeringsorganer, hvilket kan forbedre produktets markedsaccept. +15 point" 
                 },
                 { 
                     image: "s10-p2.png", 
                     points: 10, 
-                    feedback: "Invester kapital i at få produktet certificeret." 
+                    feedback: "Certificering kan differentiere produktet og øge dets tiltrækningskraft, men det er vigtigt at sikre, at investeringen giver tilstrækkelig værdi. +10 point" 
                 },
                 { 
                     image: "s10-p3.png", 
                     points: 12, 
-                    feedback: "Brug marketing specialisten til at fremhæve bæredygtighedsaspektet i markedsføringen." 
+                    feedback: "Markedsføring af bæredygtighed kan tiltrække en bredere kundebase og styrke brandet, hvilket kan føre til øget salg. +12 point" 
                 },
                 { 
                     image: "s10-p4.png", 
                     points: 5, 
-                    feedback: "Fokusér på produktudvikling før certificering." 
+                    feedback: "Produktudvikling er vigtig, men uden certificering kan virksomheden miste en vigtig differentieringsfaktor på markedet. +5 point" 
                 },
                 { 
                     image: "s10-p5.png", 
                     points: 8, 
-                    feedback: "Konsulter din mentor om certificeringens strategiske værdi." 
+                    feedback: "Mentorens indsigt kan hjælpe med at forstå certificeringens langsigtede fordele, men det er vigtigt at handle i tide for at udnytte markedsmulighederne. +8 point" 
                 }
             ]
         }
