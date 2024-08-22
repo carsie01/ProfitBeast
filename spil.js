@@ -119,27 +119,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "s4-p1.png", 
                     points: 12, 
-                    feedback: "Indsaml mere feedback gennem dit netværk for at få flere data. " 
+                    feedback: "Mere data giver bedre indsigt i, hvordan produktet kan forbedres, hvilket kan føre til større kundetilfredshed. +12 point" 
                 },
                 { 
                     image: "s4-p2.png", 
-                    points: 12, 
-                    feedback: "Brug feedbacken til at foretage hurtige justeringer på prototypen." 
+                    points: 15, 
+                    feedback: "Hurtige tilpasninger baseret på feedback kan forbedre produktets markedsaccept og differentiere det fra konkurrenterne. +15 point" 
                 },
                 { 
                     image: "s4-p3.png", 
                     points: -10, 
-                    feedback: "Ignorér de mindre negative kommentarer og fortsæt med din plan." 
+                    feedback: "At ignorere feedback kan føre til, at man overser kritiske forbedringsmuligheder, hvilket kan skade produktets succes. -10 point" 
                 },
                 { 
                     image: "s4-p4.png", 
                     points: 10, 
-                    feedback: "Brug din marketing specialist til at forbedre kundekommunikationen. " 
+                    feedback: "Bedre kommunikation kan hjælpe med at klarlægge produktets værdi og forbedre kundernes oplevelse.Bedre kommunikation kan hjælpe med at klarlægge produktets værdi og forbedre kundernes oplevelse. +10 point" 
                 },
                 { 
                     image: "s4-p5.png", 
                     points: 8, 
-                    feedback: "Konsulter med din mentor for at prioritere ændringer. " 
+                    feedback: "Mentorens vejledning kan hjælpe med at fokusere på de vigtigste ændringer, hvilket kan optimere ressourcerne. +8 point" 
                 }
             ]
         },
@@ -150,27 +150,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "s5-p1.png", 
                     points: 5, 
-                    feedback: "Udvikl prototypen yderligere før du indgår i et partnerskab." 
+                    feedback: "En stærkere prototype kan gøre virksomheden mere attraktiv for partnere, men det kan forsinke muligheden for partnerskaber. +5 point" 
                 },
                 { 
                     image: "s5-p2.png", 
                     points: 12, 
-                    feedback: "Brug din mentor til at etablere kontakt og forhandle en aftale." 
+                    feedback: "Mentoren kan åbne døre og sikre bedre forhandlingsvilkår, hvilket øger sandsynligheden for en succesfuld aftale. +12 point" 
                 },
                 { 
                     image: "s5-p3.png", 
                     points: 10, 
-                    feedback: "Tag kontakt til virksomheden direkte og fremlæg din vision." 
+                    feedback: "Direkte kontakt kan skabe stærke partnerskaber, men det kræver en overbevisende præsentation for at lykkes. +10 point" 
                 },
                 { 
                     image: "s5-p4.png", 
                     points: 5, 
-                    feedback: "Brug kapitalen til at gøre din virksomhed mere attraktiv for partnere. " 
+                    feedback: "Kapitalinvesteringer kan øge virksomhedens værdi, men uden de rigtige partnere kan dette være ineffektivt. +5 point" 
                 },
                 { 
                     image: "s5-p5.png", 
                     points: 15, 
-                    feedback: "Brug dit netværk til at identificere de bedste potentielle partnere. " 
+                    feedback: "Netværk kan afsløre partnerskaber, der er strategisk vigtige og gensidigt fordelagtige, hvilket kan accelerere virksomhedens vækst. +15 point" 
                 }
             ]
         },
@@ -181,27 +181,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "s6-p1.png", 
                     points: 9, 
-                    feedback: "Brug dit netværk til at få indsigt i konkurrentens strategi." 
+                    feedback: "At kende konkurrenternes strategi kan hjælpe med at tilpasse og styrke din egen position på markedet. +12 point" 
                 },
                 { 
                     image: "s6-p2.png", 
                     points: 15, 
-                    feedback: "Differentier dit produkt ved at fokusere på unikke funktioner." 
+                    feedback: "Differentiering er afgørende for at skabe en unik markedsposition og undgå priskrig. +15 point" 
                 },
                 { 
                     image: "s6-p3.png", 
-                    points: 5, 
-                    feedback: "Sænk prisen for at konkurrere direkte." 
+                    points: -5, 
+                    feedback: "Priskrig kan skade virksomhedens marginer og værdi på lang sigt; det er en risikabel strategi. -5 point" 
                 },
                 { 
                     image: "s6-p4.png", 
                     points: 10, 
-                    feedback: "Brug marketing specialisten til at skabe en kampagne, der fremhæver dine styrker." 
+                    feedback: "En målrettet kampagne kan hjælpe med at kommunikere produktets unikke værdier og tiltrække kunder. +10 point" 
                 },
                 { 
                     image: "s6-p5.png", 
                     points: 8, 
-                    feedback: "Konsulter din mentor for at justere din strategi i forhold til konkurrencen" 
+                    feedback: "Mentorens indsigt kan hjælpe med at tilpasse strategien effektivt, men det kan være langsommere end andre tiltag. +8 point" 
                 }
             ]
         },
