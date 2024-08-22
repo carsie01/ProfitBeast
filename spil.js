@@ -88,27 +88,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 { 
                     image: "s3-p1.png", 
                     points: 15, 
-                    feedback: "Brug dit netværk til at finde potentielle samarbejdspartnere." 
+                    feedback: "Netværk kan åbne døre til strategiske samarbejder, der kan accelerere væksten uden store kapitaludlæg. +15 point" 
                 },
                 { 
                     image: "s3-p2.png", 
                     points: 10, 
-                    feedback: "Fokusér på at skalere organisk gennem nuværende kunder." 
+                    feedback: "Organisk vækst er sund og bæredygtig, men det kan være langsommere sammenlignet med at udnytte strategiske samarbejder. +10 point" 
                 },
                 { 
                     image: "s3-p3.png", 
                     points: 8, 
-                    feedback: "Invester i at rekruttere flere medlemmer til teamet." 
+                    feedback: "At udvide teamet kan øge kapaciteten og bringe nye kompetencer ind, men det er også en kapitalintensiv tilgang. +8 point" 
                 },
                 { 
                     image: "s3-p4.png", 
                     points: 5, 
-                    feedback: "Brug kapitalen til at købe mindre konkurrenter." 
+                    feedback: "Opkøb kan være en hurtig måde at udvide markedsandele på, men det er risikabelt og kan være dyrt. +5 point" 
                 },
                 { 
                     image: "s3-p5.png", 
                     points: 12, 
-                    feedback: "Konsulter med din mentor for at udvikle en ekspansionsstrategi." 
+                    feedback: "Mentorens erfaring kan hjælpe med at navigere komplekse ekspansionsbeslutninger og undgå almindelige faldgruber. +12 point" 
                 }
             ]
         },
