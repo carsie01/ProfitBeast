@@ -11,10 +11,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('modal');
     const modalFeedback = document.getElementById('modal-feedback');
     const closeModal = document.getElementById('close-modal');
+    const nextRoundButton = document.getElementById('next-round-button');
     const clickSound = new Audio('sounds/click.mp3');
     const backgroundMusic = new Audio('sounds/Stardew Valley OST - Stardew Valley Overture.mp3'); // 
     backgroundMusic.loop = true; // Ensure the music loops
     backgroundMusic.volume = 0.5; // Set the volume (0.0 to 1.0)
+    const roundCounterDisplay = document.getElementById('round-counter');
+
 
 
     let points = 0;
@@ -43,16 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     points: 12, 
                     feedback: "Dette er en klog beslutning, da det sikrer, at produktet opfylder kundernes behov, hvilket kan føre til bedre markedsaccept. +12 point" 
                 },
-                { 
-                    image: "../images/s1-p4.png", 
-                    points: 10, 
-                    feedback: "Mentorens erfaring kan være uvurderlig til at prioritere ressourcer korrekt og undgå faldgruber, hvilket kan spare tid og penge. +10 point" 
-                },
-                { 
-                    image: "../images/s1-p5.png", 
-                    points: 8, 
-                    feedback: "Nye værktøjer kan forbedre effektiviteten og kvaliteten af udviklingsprocessen, men det er vigtigt at sikre, at investeringen er nødvendig og giver værdi. +8 point" 
-                }
+                
             ]
         },
         {
@@ -74,16 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     points: 12, 
                     feedback: "Partnerskaber kan udvide rækkevidden af markedsføringen og introducere produktet til nye kundesegmenter, hvilket er en omkostningseffektiv strategi. +12 point" 
                 },
-                { 
-                    image: "../images/s2-p4.png", 
-                    points: 10, 
-                    feedback: "Sociale medier kan være en effektiv kanal til at nå en bred målgruppe med lave omkostninger, hvilket er ideelt i en tidlig fase. +10 point" 
-                },
-                { 
-                    image: "../images/s2-p5.png", 
-                    points: 5, 
-                    feedback: "Dette kan være effektivt, men det er en dyrere løsning, og det kan være risikabelt, hvis afkastet ikke er tilstrækkeligt. +5 point" 
-                }
+                
             ]
         },
         {
@@ -105,16 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     points: 8, 
                     feedback: "At udvide teamet kan øge kapaciteten og bringe nye kompetencer ind, men det er også en kapitalintensiv tilgang. +8 point" 
                 },
-                { 
-                    image: "../images/s3-p4.png", 
-                    points: 5, 
-                    feedback: "Opkøb kan være en hurtig måde at udvide markedsandele på, men det er risikabelt og kan være dyrt. +5 point" 
-                },
-                { 
-                    image: "../images/s3-p5.png", 
-                    points: 12, 
-                    feedback: "Mentorens erfaring kan hjælpe med at navigere komplekse ekspansionsbeslutninger og undgå almindelige faldgruber. +12 point" 
-                }
             ]
         },
         {
@@ -136,16 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     points: -10, 
                     feedback: "At ignorere feedback kan føre til, at man overser kritiske forbedringsmuligheder, hvilket kan skade produktets succes. -10 point" 
                 },
-                { 
-                    image: "../images/s4-p4.png", 
-                    points: 10, 
-                    feedback: "Bedre kommunikation kan hjælpe med at klarlægge produktets værdi og forbedre kundernes oplevelse.Bedre kommunikation kan hjælpe med at klarlægge produktets værdi og forbedre kundernes oplevelse. +10 point" 
-                },
-                { 
-                    image: "../images/s4-p5.png", 
-                    points: 8, 
-                    feedback: "Mentorens vejledning kan hjælpe med at fokusere på de vigtigste ændringer, hvilket kan optimere ressourcerne. +8 point" 
-                }
+                
             ]
         },
         {
@@ -167,16 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     points: 10, 
                     feedback: "Direkte kontakt kan skabe stærke partnerskaber, men det kræver en overbevisende præsentation for at lykkes. +10 point" 
                 },
-                { 
-                    image: "../images/s5-p4.png", 
-                    points: 5, 
-                    feedback: "Kapitalinvesteringer kan øge virksomhedens værdi, men uden de rigtige partnere kan dette være ineffektivt. +5 point" 
-                },
-                { 
-                    image: "../images/s5-p5.png", 
-                    points: 15, 
-                    feedback: "Netværk kan afsløre partnerskaber, der er strategisk vigtige og gensidigt fordelagtige, hvilket kan accelerere virksomhedens vækst. +15 point" 
-                }
+              
             ]
         },
         {
@@ -198,16 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     points: -5, 
                     feedback: "Priskrig kan skade virksomhedens marginer og værdi på lang sigt; det er en risikabel strategi. -5 point" 
                 },
-                { 
-                    image: "../images/s6-p4.png", 
-                    points: 10, 
-                    feedback: "En målrettet kampagne kan hjælpe med at kommunikere produktets unikke værdier og tiltrække kunder. +10 point" 
-                },
-                { 
-                    image: "../images/s6-p5.png", 
-                    points: 8, 
-                    feedback: "Mentorens indsigt kan hjælpe med at tilpasse strategien effektivt, men det kan være langsommere end andre tiltag. +8 point" 
-                }
+                
             ]
         },
         {
@@ -229,16 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     points: 12, 
                     feedback: "At sikre en større kundebase før skalering minimerer risikoen og sikrer en mere stabil indtægtsstrøm. +12 point" 
                 },
-                { 
-                    image: "../images/s7-p4.png", 
-                    points: 8, 
-                    feedback: "Mentoren kan give værdifuld vejledning, men det er vigtigt at handle hurtigt og beslutsomt. +8 point" 
-                },
-                { 
-                    image: "../images/s7-p5.png", 
-                    points: 5, 
-                    feedback: "Flere medarbejdere kan hjælpe med at håndtere vækst, men det øger også omkostningerne og risiciene. +5 point" 
-                }
+              
             ]
         },
         {
@@ -260,16 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     points: 12, 
                     feedback: "Feedback fra netværket kan give uvurderlige perspektiver og hjælpe med at forme en brandidentitet, der resonerer på markedet. +12 point" 
                 },
-                { 
-                    image: "../images/s8-p4.png", 
-                    points: 8, 
-                    feedback: "Mindre justeringer kan være omkostningseffektive, men de kan også være utilstrækkelige, hvis brandproblemerne er fundamentale. +8 point" 
-                },
-                { 
-                    image: "../images/s8-p5.png", 
-                    points: 10, 
-                    feedback: "Mentoren kan sikre, at rebrandingen er strategisk fornuftig, men det er vigtigt at sikre, at handlingen er rettidig. +10" 
-                }
+               
             ]
         },
         {
@@ -291,16 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     points: 10, 
                     feedback: "BInvestering i teknologi kan give en konkurrencefordel, men det er vigtigt at sikre, at teknologien er den rette for virksomheden. +10 point" 
                 },
-                { 
-                    image: "../images/s9-p4.png", 
-                    points: 12, 
-                    feedback: "Et pilotprojekt reducerer risikoen ved at sikre, at teknologien fungerer som forventet, før der investeres yderligere. +12 point" 
-                },
-                { 
-                    image: "../images/s9-p5.png", 
-                    points: 8, 
-                    feedback: "Mentorens erfaring kan hjælpe med at vurdere, om investeringen i teknologien vil give langsigtede fordele, men det kan forsinke beslutningstagningen. +8 point" 
-                }
+               
             ]
         },
         {
@@ -322,16 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     points: 12, 
                     feedback: "Markedsføring af bæredygtighed kan tiltrække en bredere kundebase og styrke brandet, hvilket kan føre til øget salg. +12 point" 
                 },
-                { 
-                    image: "../images/s10-p4.png", 
-                    points: 5, 
-                    feedback: "Produktudvikling er vigtig, men uden certificering kan virksomheden miste en vigtig differentieringsfaktor på markedet. +5 point" 
-                },
-                { 
-                    image: "../images/s10-p5.png", 
-                    points: 8, 
-                    feedback: "Mentorens indsigt kan hjælpe med at forstå certificeringens langsigtede fordele, men det er vigtigt at handle i tide for at udnytte markedsmulighederne. +8 point" 
-                }
+                
             ]
         }
     ];
@@ -343,8 +255,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function startGame() {
+        currentScenario = 0; // Initialize the scenario counter
+        updateRoundCounter(); // Update round counter for the first round
         backgroundMusic.play(); // Start the background music
-        loadScenario();
+
         // Set background images for the character and startup cards
         characterCardDisplay.style.backgroundImage = "url('images/karakter.png')";
         startupCardDisplay.style.backgroundImage = "url('images/virksomhed.png')";
@@ -352,8 +266,10 @@ document.addEventListener('DOMContentLoaded', function () {
         characterCardDisplay.textContent = "";  // Clear text if you want only the image
         startupCardDisplay.textContent = "";    // Clear text if you want only the image
         
-        loadScenario();
+        loadScenario(); // Load the first scenario
     }
+
+    
     
     function loadScenario() {
         const scenario = scenarios[currentScenario];
@@ -388,12 +304,23 @@ document.addEventListener('DOMContentLoaded', function () {
         modalFeedback.textContent = feedback;
         modal.style.display = "block";
 
+        nextRoundButton.addEventListener('click', function() {
+            modal.style.display = "none";
+            
+        });
         // Ensure that the game proceeds to the next scenario after the feedback is closed
+        modalFeedback.textContent = feedback;
+        modal.style.display = "block";
+
+        // Ensure the event listener is not added multiple times
+        nextRoundButton.removeEventListener('click', nextScenario);
+        nextRoundButton.addEventListener('click', nextScenario);
+
         const closeHandler = function () {
             modal.style.display = "none";
             closeModal.removeEventListener('click', closeHandler); // Remove listener to avoid stacking
             window.removeEventListener('click', outsideClickHandler); // Remove listener to avoid stacking
-            nextScenario(); // Load the next scenario
+           
         };
 
         const outsideClickHandler = function (event) {
@@ -401,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 modal.style.display = "none";
                 closeModal.removeEventListener('click', closeHandler); // Remove listener to avoid stacking
                 window.removeEventListener('click', outsideClickHandler); // Remove listener to avoid stacking
-                nextScenario(); // Load the next scenario
+                
             }
         };
 
@@ -410,12 +337,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function nextScenario() {
-        currentScenario++;
+        console.log("Before increment:", currentScenario);
+        currentScenario++; // Increment the scenario counter
+        console.log("After increment:", currentScenario);
+    
         if (currentScenario < scenarios.length) {
-            loadScenario();
+            updateRoundCounter(); // Update the round counter when moving to the next round
+            loadScenario(); // Load the next scenario
         } else {
-            endGame();
+            endGame(); // End the game if no more scenarios
         }
+    }
+
+     function updateRoundCounter() {
+        roundCounterDisplay.textContent = currentScenario + 1; // Display the current round number
     }
 
     function endGame() {

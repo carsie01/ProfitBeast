@@ -98,6 +98,21 @@ body {
     text-align: center;
 }
 
+#points-round-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#points-round-container h3 {
+    margin: 0 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+
 .modal {
     display: none;
     position: fixed;
@@ -110,14 +125,30 @@ body {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #FFF8BD;
+    border: #282851 5px solid;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
     width: 300px; /* Set a fixed width */
     max-width: 80vw; /* Ensure it doesn't exceed the viewport width */
-    border-radius: 10px;
+    border-radius: 35px;
     text-align: center;
+}
+
+.ability-button {
+    background-color: #F8E564;
+    color: #282851;
+    font-family: "neuropol-x-light", sans-serif;
+    font-weight: 500;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
 }
 
 .close-button {
