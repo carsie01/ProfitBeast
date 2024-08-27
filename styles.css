@@ -8,16 +8,17 @@ body {
     align-items: center;
     min-height: 100vh;
     overflow-x: hidden;
-    background-image: url('images/512530-PI9K6T-283.jpg')
-   ;
+    background-image: url('images/Rectangle-79.png');
+    background-size: cover;
 }
+
 
 .screen {
     width: 100%;
     max-width: 70vw;
     height: auto;
-    background-color: white;
-    border-radius: 10px;
+    border-radius: 109.465px;
+    background: rgba(22, 41, 79, 0.79);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -130,8 +131,9 @@ body {
 }
 
 .modal-content {
-    background-color: #FFF8BD;
-    border: #282851 5px solid;
+    background-color: #5D5D8E;
+    border: #F4D64A 5px solid;
+    color: white;
     margin: 15% auto;
     padding: 20px;
     width: 300px; /* Set a fixed width */
