@@ -14,10 +14,9 @@
     
     <div id="start-screen" class="screen">
         
-        <h1>Velkommen til ProfitBeast</h1>
-        <img src="images/logo.png" alt="ProfitBeast Logo">
-        <p>Tag et godt kig på dit karakterkort og virksomhedskort, og brug de redskaber, du har til rådighed, til at navigere gennem disse 10 scenarier. <br><br> Træf valg baseret på de ressourcer, du allerede har, ved at følge "Bird in hand"-princippet, som understreger vigtigheden af at bruge det, der er lige ved hånden. Saml point baseret på dine beslutninger, og sigt efter at opnå mindst 100 point for at sikre, at din startup bliver en succes.</p>
-        <button id="start-button">Start the Game</button>
+        <h1>ProfitBeast</h1>
+        
+        <button id="start-button">Start</button>
     </div>
 
     <div id="game-screen" class="screen" style="display:none;">
@@ -25,14 +24,9 @@
         <!-- Points Display -->
         <div id="points-container">
             <h3>Scenarie <span id="round-counter">1</span> ud af 10</h3>
-            <h3>Dine Point: <span id="points">0</span></h3>
+            <h2>Dine Guldmønter: <span id="points">0</span></h2>
         </div>
-
-        <!-- Character and Startup Info -->
-        <div class="character-startup">
-            <div id="character-card" class="card">Character Card</div>
-            <div id="startup-card" class="card">Startup Card</div>
-        </div>
+        
 
         <!-- Scenario and Choices -->
         <div id="scenario-container">
@@ -51,10 +45,12 @@
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close-button" id="close-modal">&times;</span>
+            <h3></h3>
             <p id="modal-feedback"></p>
             <button id="next-round-button" class="ability-button">NÆSTE</button>
         </div>
     </div>
+    
     
 
     <script src="spil.js"></script>
