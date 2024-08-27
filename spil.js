@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Grab the necessary elements from the DOM
     const startButton = document.getElementById('start-button');
+    const rulesButton = document.getElementById('rulesButton');
+    const cardsButton = document.getElementById('cardsButton');
+    const gameButton = document.getElementById('gameButton');
+    const nextButton = document.getElementById('next-button');
+    
     const startScreen = document.getElementById('start-screen');
-<<<<<<< HEAD
     const introScreen = document.getElementById('intro');
     const rulesScreen = document.getElementById('rules');
-    const cardScreen = document.getElementById('cards');
-=======
->>>>>>> parent of e1f38c0 (pages)
+    const cardsScreen = document.getElementById('cards');
     const gameScreen = document.getElementById('game-screen');
-    const characterCardDisplay = document.getElementById('character-card');
-    const startupCardDisplay = document.getElementById('startup-card');
     const scenarioTitle = document.getElementById('scenario-title');
     const scenarioDescription = document.getElementById('scenario-description');
     const choicesContainer = document.getElementById('choices-container');
@@ -18,13 +19,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const modalFeedback = document.getElementById('modal-feedback');
     const closeModal = document.getElementById('close-modal');
     const nextRoundButton = document.getElementById('next-round-button');
-    const clickSound = new Audio('sounds/click.mp3');
-    const backgroundMusic = new Audio('sounds/Stardew Valley OST - Stardew Valley Overture.mp3'); // 
-    backgroundMusic.loop = true; // Ensure the music loops
-    backgroundMusic.volume = 0.5; // Set the volume (0.0 to 1.0)
     const roundCounterDisplay = document.getElementById('round-counter');
-
-
+    
+    const clickSound = new Audio('sounds/click.mp3');
+    const backgroundMusic = new Audio('sounds/Stardew Valley OST - Stardew Valley Overture.mp3');
+    backgroundMusic.loop = true;
+    backgroundMusic.volume = 0.5;
 
     let points = 0;
     let currentScenario = 0;
@@ -252,171 +252,138 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
-    startButton.addEventListener('click', function () {
+     // Navigation between screens
+     startButton.addEventListener('click', function() {
         startScreen.style.display = 'none';
+        introScreen.style.display = 'block';
+    });
+    
+    rulesButton.addEventListener('click', function() {
+        introScreen.style.display = 'none';
+        rulesScreen.style.display = 'block';
+    });
+
+    cardsButton.addEventListener('click', function() {
+        rulesScreen.style.display = 'none';
+        cardsScreen.style.display = 'block';
+    });
+
+    gameButton.addEventListener('click', function() {
+        cardsScreen.style.display = 'none';
         gameScreen.style.display = 'block';
         startGame();
     });
 
-    function startGame() {
-        currentScenario = 0; // Initialize the scenario counter
-        updateRoundCounter(); // Update round counter for the first round
-        backgroundMusic.play(); // Start the background music
+    nextButton.addEventListener('click', function() {
+        nextScenario(); // Move to the next scenario
+    });
 
-        loadScenario(); // Load the first scenario
+    // Start the game
+    function startGame() {
+        currentScenario = 0;
+        updateRoundCounter();
+        backgroundMusic.play();
+        loadScenario();
     }
 
-    
-    
+    // Load a scenario
     function loadScenario() {
         const scenario = scenarios[currentScenario];
         scenarioTitle.textContent = scenario.title;
         scenarioDescription.textContent = scenario.description;
         choicesContainer.innerHTML = ''; // Clear previous choices
+        nextButton.style.display = 'none'; // Hide the next button initially
 
         scenario.choices.forEach((choice) => {
             const cardElement = document.createElement('div');
             cardElement.className = 'card';
-            cardElement.style.backgroundImage = `url('images/${choice.image}')`;
-
-            // Adjust points based on character and startup
-            let adjustedPoints = choice.points;
+            cardElement.style.backgroundImage = `url('${choice.image}')`;
 
             cardElement.addEventListener('click', function () {
-                points += adjustedPoints;
+                points += choice.points;
                 pointsDisplay.textContent = points;
-
-                // Play click sound
                 clickSound.play();
-
-<<<<<<< HEAD
-// Start the game
-function startGame() {
-    currentScenario = 0;
-    points = 0; // Reset points at the start of the game
-    updateRoundCounter();
-    backgroundMusic.play();
-    loadScenario();
-}
-=======
-                // Show feedback in modal
                 showFeedback(choice.feedback);
             });
->>>>>>> parent of e1f38c0 (pages)
 
             choicesContainer.appendChild(cardElement);
         });
-<<<<<<< HEAD
-
-        choicesContainer.appendChild(cardElement);
-    });
-}
-
-// Show feedback in a modal
-function showFeedback(feedback) {
-    modalFeedback.textContent = feedback;
-    modal.style.display = "block";
-
-    closeModal.addEventListener('click', closeModalHandler);
-    window.addEventListener('click', outsideClickHandler);
-    nextRoundButton.addEventListener('click', closeModalHandler, { once: true }); // Ensure the handler is added once
-}
-
-// Close the modal and show the "Next Scenario" button
-function closeModalHandler() {
-    modal.style.display = "none";
-    closeModal.removeEventListener('click', closeModalHandler);
-    window.removeEventListener('click', outsideClickHandler);
-
-    if (currentScenario < scenarios.length - 1) {
-        nextButton.style.display = 'block'; // Show the next button
-    } else {
-        endGame(); // End the game if no more scenarios
-=======
->>>>>>> parent of e1f38c0 (pages)
     }
 
+    // Show feedback in a modal
     function showFeedback(feedback) {
         modalFeedback.textContent = feedback;
         modal.style.display = "block";
 
-        nextRoundButton.addEventListener('click', function() {
-            modal.style.display = "none";
-            
-        });
-        // Ensure that the game proceeds to the next scenario after the feedback is closed
-        modalFeedback.textContent = feedback;
-        modal.style.display = "block";
-
-        // Ensure the event listener is not added multiple times
-        nextRoundButton.removeEventListener('click', nextScenario);
-        nextRoundButton.addEventListener('click', nextScenario);
-
-        const closeHandler = function () {
-            modal.style.display = "none";
-            closeModal.removeEventListener('click', closeHandler); // Remove listener to avoid stacking
-            window.removeEventListener('click', outsideClickHandler); // Remove listener to avoid stacking
-           
-        };
-
-        const outsideClickHandler = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-                closeModal.removeEventListener('click', closeHandler); // Remove listener to avoid stacking
-                window.removeEventListener('click', outsideClickHandler); // Remove listener to avoid stacking
-                
-            }
-        };
-
-        closeModal.addEventListener('click', closeHandler);
+        closeModal.addEventListener('click', closeModalHandler);
         window.addEventListener('click', outsideClickHandler);
+        nextRoundButton.removeEventListener('click', closeModalHandler); // Prevent stacking
+        nextRoundButton.addEventListener('click', closeModalHandler);
     }
 
-    function nextScenario() {
-        console.log("Before increment:", currentScenario);
-        currentScenario++; // Increment the scenario counter
-        console.log("After increment:", currentScenario);
-    
-        if (currentScenario < scenarios.length) {
-            updateRoundCounter(); // Update the round counter when moving to the next round
-            loadScenario(); // Load the next scenario
+    // Close the modal and show the "Next Scenario" button
+    function closeModalHandler() {
+        modal.style.display = "none";
+        closeModal.removeEventListener('click', closeModalHandler);
+        window.removeEventListener('click', outsideClickHandler);
+
+        if (currentScenario < scenarios.length - 1) {
+            nextButton.style.display = 'block'; // Show the next button
         } else {
             endGame(); // End the game if no more scenarios
         }
     }
 
-     function updateRoundCounter() {
-        roundCounterDisplay.textContent = currentScenario + 1; // Display the current round number
-    };
+    // Close modal when clicking outside of it
+    function outsideClickHandler(event) {
+        if (event.target === modal) {
+            closeModalHandler();
+        }
+    }
 
+    // Move to the next scenario
+    function nextScenario() {
+        currentScenario++;
+        if (currentScenario < scenarios.length) {
+            updateRoundCounter();
+            loadScenario();
+        } else {
+            endGame();
+        }
+    }
+
+    // Update the round counter
+    function updateRoundCounter() {
+        roundCounterDisplay.textContent = currentScenario + 1;
+    }
+
+    // End the game
     function endGame() {
         gameScreen.innerHTML = `
             <div id="end-game-screen">
                 <h2>Spillet er slut</h2>
                 <p>Du fik ${points} point.</p>`;
-            
+        
         if (points >= 3000) {
-            gameScreen.innerHTML `<div id="end-game-screen">
+            gameScreen.innerHTML += `
             <img src="images/stars-3.png">
             <p>Tillykke! Du har med stor succes opbygget GreenTech Solutions og gjort det til en blomstrende virksomhed!</p>
-            <button id="try-again-button">Prøv igen</button>`;
+            <button id="try-again-button">Prøv igen</button></div>`;
         } else if (points >= 1500) {
-            gameScreen.innerHTML += `<div id="end-game-screen">
+            gameScreen.innerHTML += `
             <img src="images/stars-2.png">
             <p>Godt gået! Du har gjort GreenTech Solutions til en stabil virksomhed, men der er stadig plads til vækst</p>
-            <button id="try-again-button">Prøv igen</button>`;
+            <button id="try-again-button">Prøv igen</button></div>`;
         } else {
-            gameScreen.innerHTML +=`<div id="end-game-screen">
+            gameScreen.innerHTML += `
             <img src="images/stars-1.png">
             <p>Desværre, du opnåede ikke nok point til at få succes. Prøv igen!</p>
-            <button id="try-again-button">Prøv igen</button>`;
+            <button id="try-again-button">Prøv igen</button></div>`;
         }
 
         const tryAgainButton = document.getElementById('try-again-button');
         tryAgainButton.addEventListener('click', function() {
-            location.reload(); // Reload the page to start the game again
+            location.reload();
         });
-        
-
     }
 });

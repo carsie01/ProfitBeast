@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProfitBeast</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.typekit.net/hvd7bnb.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/hvd7bnb.css">
 </head>
+
 <body>
-    
+
+    <!-- Start Screen -->
     <div id="start-screen" class="screen">
-        
         <h1>ProfitBeast</h1>
-        
         <button id="start-button">Start</button>
     </div>
 
-<<<<<<< HEAD
     <!-- Intro Screen -->
     <div id="intro" class="screen" style="display:none;">
-        <h2>BAGGRUNDS HISTORIE</h2>
+        <h2>Baggrunds historie</h2>
         <p>
             Du var protegé for en legendarisk iværksætter kendt for sin utrolige evne til at redde kriseramte virksomheder og omdanne dem til industrielle giganter.
             <br><br>
@@ -41,48 +42,29 @@
 
     <!-- Rules Screen -->
     <div id="rules" class="screen" style="display:none;">
-        <h2>SÅDAN SPILLER DU</h2>
+        <h2>Spilregler</h2>
         <p>
-            Forstå virksomheden: Læs om start-up virksomheden og deres tilgængelige ressourcer.
-            <br><br>
-            Naviger gennem scenarier: Stå over for 10 scenarier, hvor du skal træffe beslutninger for virksomheden.
-            <br><br>
-            Vælg handlinger: For hvert scenarie vælger du mellem 3 muligheder med værdier på 50, 150, eller 300 Guldmønter.
-            <br><br>
-            Samle mønter: Optjen så mange Guld mønter som muligt for at maksimere virksomhedens succes.
-            <br><br>
-            Opnå succes: Hvis du samler nok point, kvalificerer du dig til at hjælpe den næste virksomhed.
-            <br><br>
-            Fuldfør alle virksomheder: Gennemfør opgaver for 4 forskellige virksomheder for at vinde spillet.
+            Reglerne for spillet...
         </p>
         <button id="cardsButton">Næste</button>
     </div>
 
     <!-- Cards Screen -->
-    <div id="card" class="screen" style="display:none;">
-        <h2>DIN FØRSTE STARTUP</h2>
-        <div class="cardd-container">
-            <div class="cardd">
-                <img src="images/virksomhed.png" alt="GreenTech Solutions">
-            </div>
-            <div class="cardd">
-                <img src="images/karakter.png" alt="Karakterkort">
-            </div>
-        </div>
+    <div id="cards" class="screen" style="display:none;">
+        <h2>Kortoversigt</h2>
+        <p>
+            Information om kortene...
+        </p>
         <button id="gameButton">Start Spillet</button>
     </div>
 
     <!-- Game Screen -->
-=======
->>>>>>> parent of e1f38c0 (pages)
     <div id="game-screen" class="screen" style="display:none;">
-        
         <!-- Points Display -->
         <div id="points-container">
             <h3>Scenarie <span id="round-counter">1</span> ud af 10</h3>
             <h2>Dine Guldmønter: <span id="points">0</span></h2>
         </div>
-        
 
         <!-- Scenario and Choices -->
         <div id="scenario-container">
@@ -93,12 +75,11 @@
             </div>
         </div>
 
-        
-        
         <button id="next-button" style="display:none;">Next Scenario</button>
     </div>
 
-    <div id="modal" class="modal">
+    <!-- Modal for Feedback -->
+    <div id="modal" class="modal" style="display:none;">
         <div class="modal-content">
             <span class="close-button" id="close-modal">&times;</span>
             <h3></h3>
@@ -106,9 +87,8 @@
             <button id="next-round-button" class="ability-button">NÆSTE</button>
         </div>
     </div>
-    
-    
 
     <script src="spil.js"></script>
 </body>
+
 </html>

@@ -56,21 +56,6 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
 }
 
-<<<<<<< HEAD
-#scenario-container {
-    text-align: center;
-=======
-.character-startup {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
->>>>>>> parent of e1f38c0 (pages)
-    margin-bottom: 20px;
-    margin-top: 50px;
-    width: 100%;
-}
-
 .card-row {
     display: flex;
     flex-wrap: wrap;
