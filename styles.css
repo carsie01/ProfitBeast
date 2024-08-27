@@ -63,6 +63,12 @@ body {
     max-width: 800px;
 }
 
+#intro{text-align: center;
+    text-decoration: none;
+    max-width: 600px;
+}
+#intro h2{font-family: "neuropol-x-light", sans-serif;}
+
 .character-startup {
     display: flex;
     flex-direction: column;
