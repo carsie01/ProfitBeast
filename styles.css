@@ -12,6 +12,7 @@ body {
     background-size: cover;
 }
 
+
 .screen {
     width: 100%;
     max-width: 70vw;
@@ -27,8 +28,65 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 20px;
 }
+.screen img {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
 
-#start-button,
+#start-button {
+    font-family: "neuropol-x-light", sans-serif;
+    background-color: #F8E564;
+    color: #282851;
+    font-weight: 700;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+}
+
+#start-screen p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+#start-screen h1 {
+    font-family: "neuropol-x-light", sans-serif;
+    font-size: 46px;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+//-- Itro screeen til cards screen--//
+#intro{
+    border-radius: 25px;
+    padding: 40px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    color: #fffcdb; 
+}
+h2 {
+    font-family: "neuropol-x-light", sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffd700;
+    letter-spacing: 1px; ;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.8; 
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 #rulesButton,
 #cardsButton,
 #gameButton {
@@ -47,13 +105,52 @@ body {
     width: 250px;
 }
 
-#start-button:hover,
+
 #rulesButton:hover,
 #cardsButton:hover,
 #gameButton:hover {
     background-color: #d4a000;
     transform: scale(1.05); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+}
+
+.cardd-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cardd {
+    background-color: transparent; /* Make the card background transparent */
+    border-radius: 10px;
+    width: 45%; /* Adjust based on how large you want the cards */
+    overflow: hidden;
+    transition: transform 0.3s ease; 
+}
+
+.cardd img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+.cardd:hover {
+    transform: scale(1.1); /* Scale up the card on hover */
+}
+
+
+
+
+//-- slut Itro screeen til cards screen--//
+
+.character-startup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
 }
 
 .card-row {
@@ -80,6 +177,21 @@ body {
     margin-bottom: 20px;
 }
 
+#scenario-container {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    width: 100%;
+}
+#scenario-container p {
+    font-size: 24px;
+    
+}
+
+
+
+
+
 #points-container {
     font-family: "neuropol-x-light", sans-serif;
     font-weight: 100;
@@ -87,12 +199,29 @@ body {
     width: 100%;
     text-align: center;
     color: #F4D64A;
+    
 }
-
-#points-container h3,
-#points-container h2 {
+#points-container h3 {
     font-size: 24px;
 }
+
+#points-container h2 {
+    font-size: 20px;
+    color: #F4D64A;
+}
+
+
+#points-round-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
 
 .modal {
     display: none;
@@ -104,7 +233,14 @@ body {
     height: 100%;
     background-color: rgba(0,0,0,0.5);
 }
-
+.modal h3{
+    font-family: "neuropol-x-light", sans-serif;
+    font-weight: 100;
+    color: #F4D64A;
+    font-size: 30px;
+    margin-bottom: 20px;
+    
+}
 .modal-content {
     display: flex;
     flex-direction: column;
@@ -118,8 +254,8 @@ body {
     margin: 15% auto;
     padding: 20px;
     height: 500px;
-    width: 500px; 
-    max-width: 80vw;
+    width: 500px; /* Set a fixed width */
+    max-width: 80vw; /* Ensure it doesn't exceed the viewport width */
     border-radius: 35px;
     text-align: center;
 }
@@ -137,8 +273,8 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 250px;
+    
 }
-
 .ability-button:hover {
     background-color: #ffffff;
 }
@@ -157,6 +293,14 @@ body {
     cursor: pointer;
 }
 
+#modal-image {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
 #end-game-screen {
     display: flex;
     flex-direction: column;
@@ -167,20 +311,19 @@ body {
     text-align: center;
 }
 
-#end-game-screen h2 {
+#end-game-screen h2{
     font-family: "neuropol-x-light", sans-serif;
     font-size: 46px;
     margin-bottom: 20px;
     max-width: 800px;
 }
 
-#end-game-screen img {
+#end-game-screen img{
     width: 100%;
     height: auto;
     max-width: 400px;
     margin-bottom: 20px;
 }
-
 #try-again-button {
     background-color: #F8E564;
     color: #282851;
@@ -194,10 +337,17 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 250px;
+    
 }
+
+
 
 /* Media queries for responsiveness */
 @media (min-width: 768px) {
+    .character-startup {
+        flex-direction: row;
+    }
+
     .card {
         width: 220px;
         height: 280px;
