@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Grab the necessary elements from the DOM
     const startButton = document.getElementById('start-button');
     const rulesButton = document.getElementById('rulesButton');
     const cardsButton = document.getElementById('cardsButton');
@@ -252,49 +251,48 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
-     // Navigation between screens
-     startButton.addEventListener('click', function() {
+    // Screen transition logic
+    startButton.addEventListener('click', function () {
         startScreen.style.display = 'none';
         introScreen.style.display = 'block';
     });
-    
-    rulesButton.addEventListener('click', function() {
+
+    rulesButton.addEventListener('click', function () {
         introScreen.style.display = 'none';
         rulesScreen.style.display = 'block';
     });
 
-    cardsButton.addEventListener('click', function() {
+    cardsButton.addEventListener('click', function () {
         rulesScreen.style.display = 'none';
         cardsScreen.style.display = 'block';
     });
 
-    gameButton.addEventListener('click', function() {
+    gameButton.addEventListener('click', function () {
         cardsScreen.style.display = 'none';
         gameScreen.style.display = 'block';
         startGame();
     });
 
-    nextButton.addEventListener('click', function() {
-        nextScenario(); // Move to the next scenario
+    nextButton.addEventListener('click', function () {
+        nextScenario();
     });
 
-    // Start the game
+    // Game logic
     function startGame() {
+        points = 0;
         currentScenario = 0;
         updateRoundCounter();
         backgroundMusic.play();
         loadScenario();
     }
 
-    // Load a scenario
     function loadScenario() {
         const scenario = scenarios[currentScenario];
         scenarioTitle.textContent = scenario.title;
         scenarioDescription.textContent = scenario.description;
         choicesContainer.innerHTML = ''; // Clear previous choices
-        nextButton.style.display = 'none'; // Hide the next button initially
 
-        scenario.choices.forEach((choice) => {
+        scenario.choices.forEach(choice => {
             const cardElement = document.createElement('div');
             cardElement.className = 'card';
             cardElement.style.backgroundImage = `url('${choice.image}')`;
@@ -310,40 +308,36 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Show feedback in a modal
     function showFeedback(feedback) {
         modalFeedback.textContent = feedback;
         modal.style.display = "block";
 
+        nextRoundButton.removeEventListener('click', nextScenario);
+        nextRoundButton.addEventListener('click', function handler() {
+            modal.style.display = "none";
+            nextScenario();
+            nextRoundButton.removeEventListener('click', handler); // Remove listener after use
+        });
+
         closeModal.addEventListener('click', closeModalHandler);
         window.addEventListener('click', outsideClickHandler);
-        nextRoundButton.removeEventListener('click', closeModalHandler); // Prevent stacking
-        nextRoundButton.addEventListener('click', closeModalHandler);
     }
 
-    // Close the modal and show the "Next Scenario" button
     function closeModalHandler() {
         modal.style.display = "none";
         closeModal.removeEventListener('click', closeModalHandler);
         window.removeEventListener('click', outsideClickHandler);
-
-        if (currentScenario < scenarios.length - 1) {
-            nextButton.style.display = 'block'; // Show the next button
-        } else {
-            endGame(); // End the game if no more scenarios
-        }
     }
 
-    // Close modal when clicking outside of it
     function outsideClickHandler(event) {
         if (event.target === modal) {
             closeModalHandler();
         }
     }
 
-    // Move to the next scenario
     function nextScenario() {
-        currentScenario++;
+        currentScenario++; // Increment the scenario counter
+
         if (currentScenario < scenarios.length) {
             updateRoundCounter();
             loadScenario();
@@ -352,12 +346,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Update the round counter
     function updateRoundCounter() {
         roundCounterDisplay.textContent = currentScenario + 1;
     }
 
-    // End the game
     function endGame() {
         gameScreen.innerHTML = `
             <div id="end-game-screen">
@@ -366,23 +358,23 @@ document.addEventListener('DOMContentLoaded', function () {
         
         if (points >= 3000) {
             gameScreen.innerHTML += `
-            <img src="images/stars-3.png">
-            <p>Tillykke! Du har med stor succes opbygget GreenTech Solutions og gjort det til en blomstrende virksomhed!</p>
-            <button id="try-again-button">Prøv igen</button></div>`;
+                <img src="images/stars-3.png">
+                <p>Tillykke! Du har med stor succes opbygget GreenTech Solutions og gjort det til en blomstrende virksomhed!</p>
+                <button id="try-again-button">Prøv igen</button>`;
         } else if (points >= 1500) {
             gameScreen.innerHTML += `
-            <img src="images/stars-2.png">
-            <p>Godt gået! Du har gjort GreenTech Solutions til en stabil virksomhed, men der er stadig plads til vækst</p>
-            <button id="try-again-button">Prøv igen</button></div>`;
+                <img src="images/stars-2.png">
+                <p>Godt gået! Du har gjort GreenTech Solutions til en stabil virksomhed, men der er stadig plads til vækst</p>
+                <button id="try-again-button">Prøv igen</button>`;
         } else {
             gameScreen.innerHTML += `
-            <img src="images/stars-1.png">
-            <p>Desværre, du opnåede ikke nok point til at få succes. Prøv igen!</p>
-            <button id="try-again-button">Prøv igen</button></div>`;
+                <img src="images/stars-1.png">
+                <p>Desværre, du opnåede ikke nok point til at få succes. Prøv igen!</p>
+                <button id="try-again-button">Prøv igen</button>`;
         }
 
         const tryAgainButton = document.getElementById('try-again-button');
-        tryAgainButton.addEventListener('click', function() {
+        tryAgainButton.addEventListener('click', function () {
             location.reload();
         });
     }
