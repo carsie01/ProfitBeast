@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Grab the necessary elements from the DOM
     const startButton = document.getElementById('start-button');
     const rulesButton = document.getElementById('rulesButton');
     const cardsButton = document.getElementById('cardsButton');
@@ -9,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const startScreen = document.getElementById('start-screen');
     const introScreen = document.getElementById('intro');
     const rulesScreen = document.getElementById('rules');
-    const cardsScreen = document.getElementById('cards');
+    const cardScreen = document.getElementById('cards');
     const gameScreen = document.getElementById('game-screen');
     const scenarioTitle = document.getElementById('scenario-title');
     const scenarioDescription = document.getElementById('scenario-description');
@@ -281,6 +280,7 @@ nextButton.addEventListener('click', function() {
 // Start the game
 function startGame() {
     currentScenario = 0;
+    points = 0; // Reset points at the start of the game
     updateRoundCounter();
     backgroundMusic.play();
     loadScenario();
@@ -317,8 +317,7 @@ function showFeedback(feedback) {
 
     closeModal.addEventListener('click', closeModalHandler);
     window.addEventListener('click', outsideClickHandler);
-    nextRoundButton.removeEventListener('click', closeModalHandler); // Prevent stacking
-    nextRoundButton.addEventListener('click', closeModalHandler);
+    nextRoundButton.addEventListener('click', closeModalHandler, { once: true }); // Ensure the handler is added once
 }
 
 // Close the modal and show the "Next Scenario" button

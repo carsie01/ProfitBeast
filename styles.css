@@ -63,12 +63,53 @@ body {
     max-width: 800px;
 }
 
-#intro{text-align: center;
+#intro,#rules,#cards{
     text-decoration: none;
     max-width: 600px;
+    line-height: 1.8;
+    border-radius: 25px;
+    padding: 40px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
 }
-#intro h2{font-family: "neuropol-x-light", sans-serif;}
+#intro h2{font-family: "neuropol-x-light", sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+color: #F8E564;}
 
+#rulesButton,#cardsButton,#gameButton{
+    font-family: "neuropol-x-light", sans-serif;
+    background-color: #F8E564;
+    color: #282851;
+    font-weight: 700;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+}
+
+#rulesButton:hover{
+    background-color: #d4a000;
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+}
+
+#cardsButton:hover{    background-color: #d4a000;
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+
+}
+#gameButton:hover{ background-color: #d4a000;
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+
+}
 #startup-container {
     background-color: #457b9d;
     border-radius: 15px;
@@ -90,7 +131,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-.card {
+.cardd {
     background-color: transparent; /* Make the card background transparent */
     border-radius: 10px;
     width: 45%; /* Adjust based on how large you want the cards */
@@ -108,18 +149,12 @@ h2 {
     transform: scale(1.1); /* Scale up the card on hover */
 }
 
-button#next-button {
-    background-color: #e0a700;
-    color: #000;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-}
+
 
 button#next-button:hover {
     background-color: #d4a000;
+    transform: scale(1.05); /* Scale up slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 
 
