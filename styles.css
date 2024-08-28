@@ -26,7 +26,7 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 20px;
+    margin: 0 auto;
 }
 .screen img {
     width: 100%;
@@ -64,20 +64,45 @@ body {
 }
 
 //-- Itro screeen til cards screen--//
+
 #intro{
-    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(22, 41, 79, 0.79); /* Dark, semi-transparent background */
+    color: #fffcdb; /* Light text color */
+    border-radius: 25px; /* Rounded corners */
     padding: 40px;
     width: 80%;
     max-width: 800px;
-    text-align: center;
-    color: #fffcdb; 
+    margin: 0 auto; /* Center the intro box horizontally */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
-h2 {
+
+#intro h2 {
     font-family: "neuropol-x-light", sans-serif;
-    font-size: 28px;
+    font-size: 36px; 
     margin-bottom: 20px;
-    color: #ffd700;
-    letter-spacing: 1px; ;
+    color: #ffd700; 
+    letter-spacing: 2px; 
+    text-align: center;
+}
+#rules h2 {
+    font-family: "neuropol-x-light", sans-serif;
+    font-size: 36px; 
+    margin-bottom: 20px;
+    color: #ffd700; 
+    letter-spacing: 2px; 
+    text-align: center;
+}
+#cards h2 {
+    font-family: "neuropol-x-light", sans-serif;
+    font-size: 36px; 
+    margin-bottom: 20px;
+    color: #ffd700; 
+    letter-spacing: 2px; 
+    text-align: center;
 }
 
 p {
@@ -94,15 +119,17 @@ p {
     background-color: #F8E564;
     color: #282851;
     font-weight: 700;
-    padding: 10px 20px;
+    align-items: center;
     text-align: center;
+    padding: 10px 20px;
     text-decoration: none;
-    display: inline-block;
     font-size: 30px;
     border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 250px;
+    display: block; /* Ensure buttons are block-level and can be centered */
+    margin: 10px auto;
 }
 
 
@@ -114,6 +141,12 @@ p {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
 }
 
+#cards{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
 .cardd-container {
     display: flex;
     justify-content: space-around;
@@ -122,9 +155,9 @@ p {
 }
 
 .cardd {
-    background-color: transparent; /* Make the card background transparent */
+    background-color: transparent;
     border-radius: 10px;
-    width: 45%; /* Adjust based on how large you want the cards */
+    width: 35%; 
     overflow: hidden;
     transition: transform 0.3s ease; 
 }
@@ -135,7 +168,7 @@ p {
     border-radius: 10px;
 }
 .cardd:hover {
-    transform: scale(1.1); /* Scale up the card on hover */
+    transform: scale(1.1); 
 }
 
 
