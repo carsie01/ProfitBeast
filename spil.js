@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     feedback: "Partnerskaber kan muliggøre hurtigere og mere omkostningseffektiv skalering, hvilket kan være mere bæredygtigt end at udvide internt. +300 Guldmønter" 
                 },
                 { 
-                    image: "s7-p3.png", 
+                    image: "..images/s7-p3.png", 
                     points: 150, 
                     feedback: "At sikre en større kundebase før skalering minimerer risikoen og sikrer en mere stabil indtægtsstrøm. +150 Guldmønter" 
                 },
