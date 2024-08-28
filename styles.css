@@ -70,14 +70,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(22, 41, 79, 0.79); /* Dark, semi-transparent background */
-    color: #fffcdb; /* Light text color */
-    border-radius: 25px; /* Rounded corners */
+    background: rgba(22, 41, 79, 0.79); 
+    color: #fffcdb; 
+    border-radius: 25px;
     padding: 40px;
     width: 80%;
     max-width: 800px;
-    margin: 0 auto; /* Center the intro box horizontally */
+    margin: 0 auto; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    
 }
 
 #intro h2 {
@@ -110,6 +111,7 @@ p {
     line-height: 1.8; 
     margin-bottom: 30px;
     text-align: center;
+    
 }
 
 #rulesButton,
@@ -128,7 +130,7 @@ p {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 250px;
-    display: block; /* Ensure buttons are block-level and can be centered */
+    display: block; 
     margin: 10px auto;
 }
 
