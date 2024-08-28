@@ -210,6 +210,10 @@ p {
     margin-bottom: 20px;
 }
 
+.card:hover {
+    transform: scale(1.1); 
+}
+
 #scenario-container {
     text-align: center;
     margin-bottom: 20px;
