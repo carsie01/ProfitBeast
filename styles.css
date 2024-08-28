@@ -63,7 +63,7 @@ body {
     max-width: 800px;
 }
 
-//-- Itro screeen til cards screen--//
+/*Itro screeen til cards screen /*/
 
 #intro{
     display: flex;
@@ -174,7 +174,7 @@ p {
 
 
 
-//-- slut Itro screeen til cards screen--//
+/* slut Itro screeen til cards screen /*/
 
 .character-startup {
     display: flex;
