@@ -355,27 +355,30 @@ document.addEventListener('DOMContentLoaded', function () {
             <div id="end-game-screen">
                 <h2>Spillet er slut</h2>
                 <p>Du fik ${points} point.</p>`;
-        
+            
         if (points >= 3000) {
-            gameScreen.innerHTML += `
-                <img src="images/stars-3.png">
-                <p>Tillykke! Du har med stor succes opbygget GreenTech Solutions og gjort det til en blomstrende virksomhed!</p>
-                <button id="try-again-button">Prøv igen</button>`;
+            gameScreen.innerHTML `<div id="end-game-screen">
+            <img src="images/stars-3.png">
+            <p>Tillykke! Du har med stor succes opbygget GreenTech Solutions og gjort det til en blomstrende virksomhed!</p>
+            <button id="try-again-button">Prøv igen</button>`;
         } else if (points >= 1500) {
-            gameScreen.innerHTML += `
-                <img src="images/stars-2.png">
-                <p>Godt gået! Du har gjort GreenTech Solutions til en stabil virksomhed, men der er stadig plads til vækst</p>
-                <button id="try-again-button">Prøv igen</button>`;
+            gameScreen.innerHTML += `<div id="end-game-screen">
+            <img src="images/stars-2.png">
+            <p>Godt gået! Du har gjort GreenTech Solutions til en stabil virksomhed, men der er stadig plads til vækst</p>
+            <button id="try-again-button">Prøv igen</button>`;
         } else {
-            gameScreen.innerHTML += `
-                <img src="images/stars-1.png">
-                <p>Desværre, du opnåede ikke nok point til at få succes. Prøv igen!</p>
-                <button id="try-again-button">Prøv igen</button>`;
+            gameScreen.innerHTML +=`<div id="end-game-screen">
+            <img src="images/stars-1.png">
+            <p>Desværre, du opnåede ikke nok point til at få succes. Prøv igen!</p>
+            <button id="try-again-button">Prøv igen</button>`;
         }
 
         const tryAgainButton = document.getElementById('try-again-button');
-        tryAgainButton.addEventListener('click', function () {
-            location.reload();
+        tryAgainButton.addEventListener('click', function() {
+            location.reload(); // Reload the page to start the game again
         });
+        
+
     }
+
 });
